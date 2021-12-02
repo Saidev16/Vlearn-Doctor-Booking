@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+<Styles>
+<Style ss:ID="sDT"><NumberFormat ss:Format="Short Date"/></Style>
+</Styles>
+<Worksheet ss:Name="Sheet1">
+    <Table>
+        <Row>
+            <Cell><Data ss:Type="String">MODULES</Data></Cell>
+            <Cell><Data ss:Type="String">CORE COURSE</Data></Cell>
+            <Cell><Data ss:Type="String">AVERAGE GRADE</Data></Cell>
+            <Cell><Data ss:Type="String">%FAIL</Data></Cell>
+            <Cell><Data ss:Type="String">SUCCESS RATE</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String">LANGUAGE ART</Data></Cell>
+            <Cell><Data ss:Type="String">ENGLISH 1</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">ENGLISH 2</Data></Cell>
+            <Cell><Data ss:Type="String">70%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">ENGLISH 3</Data></Cell>
+            <Cell><Data ss:Type="String">76.77%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">ENGLISH 4</Data></Cell>
+            <Cell><Data ss:Type="String">77.15%</Data></Cell>
+            <Cell><Data ss:Type="String">1.85%</Data></Cell>
+            <Cell><Data ss:Type="String">98.15%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String">MATHEMATICS</Data></Cell>
+            <Cell><Data ss:Type="String">ALGEBRA 1</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">ALGEBRA 2</Data></Cell>
+            <Cell><Data ss:Type="String">85.67%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">GEOMETRY</Data></Cell>
+            <Cell><Data ss:Type="String">89.83%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">PRE-CALCULUS</Data></Cell>
+            <Cell><Data ss:Type="String">88.33%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String">SCIENCE</Data></Cell>
+            <Cell><Data ss:Type="String">CHEMISTRY</Data></Cell>
+            <Cell><Data ss:Type="String">90%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">PHYSICS</Data></Cell>
+            <Cell><Data ss:Type="String">81.36%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">BIOLOGY</Data></Cell>
+            <Cell><Data ss:Type="String">83.94%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String">SOCIAL STUDIES</Data></Cell>
+            <Cell><Data ss:Type="String">U.S. GOVERNMENT</Data></Cell>
+            <Cell><Data ss:Type="String">86.33%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">U.S. HISTORY</Data></Cell>
+            <Cell><Data ss:Type="String">95.54%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">WORLD HISTORY</Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">ECONOMICS</Data></Cell>
+            <Cell><Data ss:Type="String">86.57%</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">100%</Data></Cell>
+        </Row>
+        <Row>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String">PHILOSOPHY &amp; HUMANITIES</Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+            <Cell><Data ss:Type="String"></Data></Cell>
+        </Row>
+    </Table>
+</Worksheet>
+</Workbook>

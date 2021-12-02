@@ -1,0 +1,203 @@
+<?php
+if (isset($_POST['nom'])){
+$nationalite=addslashes($_POST['nationalite']);
+$matiere=addslashes($_POST['matiere']);
+$nom=addslashes($_POST['nom']);
+$mail=$_POST['email'];
+$mail1=addslashes($_POST['mail1']);
+$contact=$_POST['contact'];
+$niveau=addslashes($_POST['niveau']);
+$type=$_POST['type'];
+$login=$_POST['login'];
+$pass=md5(htmlentities($_POST['pass']));
+$send_pass=htmlentities($_POST['pass']);
+$diplome=addslashes($_POST['diplome']);
+
+		if (!empty($_POST['diplome1'])){
+		$diplome = $diplome.';'.addslashes($_POST['diplome1']);
+									   }
+									   
+			if(!empty($_POST['diplome2'])){
+			   $diplome=$diplome.';'.addslashes($_POST['diplome2']);
+			    						  }
+										  
+function sendMail($n,$m,$nT,$mT,$sujet,$body) {
+	 
+   // l'émetteur
+   $tete = "From: ".$n." <".$m.">\n";
+   $tete .= "Reply-To: ".$m."\n";
+   // et zou... false si erreur d'émission
+   return mail($nT." <".$mT.">",$sujet,$body,$tete);
+   }
+
+
+		$sql="INSERT INTO $tbl_professeur (`nom_prenom` , `nationnalite` ,
+		`diplome` , `matiere` , `mail` ,  `mail1` , `contact` , `niveau` , `type`,`login` , `mot_pass` )
+		 VALUES ( '$nom', '$nationalite', '$diplome','$matiere', '$mail', '$mail1', '$contact', 
+         '$niveau', '$type', '$login', '$pass')";  
+
+      // Interface PHP pour mail()
+
+       @mysql_query($sql)or die ("erreur lors de l'enregistrement  de cet enseignant");
+	   
+	   $sujet= 'Votre login et mot de passe';
+	  
+	   $body='votre login est : '.$login.' et votre mot de passe est :'.$send_pass;
+	  
+	   sendMail('PIIMT SYSTEM ADMIN','a.maghlaoui@gmail.com',$nom,$mail,$sujet,$body);
+
+			?>
+			<script type="text/javascript" language="JavaScript1.2">
+			<!--	
+					window.location.replace('gestion_enseignants.php');
+			//-->
+			</script>
+              <?php
+			  }
+			  else{
+			  ?>
+
+<table border="0" width="100%" align="center" class="haut_table">
+  <tr>
+    	<td>
+			<img src="images/icone/etudiants.gif" border="0"/>
+		</td>
+    	<td width="78%" class="titre">
+			&nbsp;GESTION DES ENSEIGNANTS<span class="task">[ajouter]</span> 
+	    </td>
+		<td width="22%">
+	 		 <table border="0" align="right" width="0%" cellpadding="10" cellspacing="4" id="link" >
+	    <tr>
+		  <td valign="top" align="center">
+		   <a href="#" onclick="javascript:validate()"><div class="save"></div>Ajouter</a>
+		  </td>
+		  <td valign="top" align="center">
+		   <a href="gestion_enseignants.php"><div class="cancel"></div>Annuler</a>
+		  </td>
+		</tr>
+	  </table>
+		</td> 
+  </tr>
+ </table>
+
+ <form method="post" action="gestion_enseignants.php?new=oui" name="f_ajout" >
+	  <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+	   <tr>
+	     <td height="5"></td>
+	   </tr>
+       <tr>
+         <td valign="top" width="100%">
+	       <table border="0" cellpadding="0" cellspacing="2" width="100%" class="cellule_table">
+		  <tr>
+		  <td width="15%">Nom et pr&eacute;nom : </td>
+		  <td width="30%"><input type="text" name="nom" id="nom" class="input input_size" /></td>
+		  <td width="55%"><div id="er_nom" class="erreur"></div></td>
+		  </tr>
+
+		  <tr><td colspan="3" height="3px"></td></tr>
+		   <tr>
+		  <td>Nationalité : </td>
+		  <td><input type="text" name="nationalite" id="nationalite" class="input input_size" /></td>
+		   <td>&nbsp;</td>
+		   </tr>
+
+		  <tr><td colspan="3" height="3px"></td></tr>
+		  
+		   <tr>
+		  <td>Matirère : </td>
+		  <td><input type="text" name="matiere" id="matiere" class="input input_size" /></td>
+		   <td>&nbsp;</td>
+		   </tr>
+		  <tr><td colspan="3" height="3px"></td></tr>
+		   <tr>
+		  <td>E-mail : </td>
+		  <td><input type="text" name="email" id="mail" class="input input_size" /></td>
+		   <td><div id="er_mail" class="erreur"></div></td>
+		   </tr>
+			<tr><td colspan="3" height="3px"></td></tr>
+		   <tr>
+		  <td>E-mail secondaire : </td>
+		  <td><input type="text" name="mail1" id="mail1" class="input input_size" /></td>
+		   <td></td>
+		   </tr>
+		  <tr><td colspan="3" height="3px"></td></tr>
+
+		   <tr>
+		  <td>Contact : </td>
+		  <td><input type="text" name="contact" id="contact" class="input input_size" /></td>
+		   <td>&nbsp;</td>
+		   </tr>
+
+		  <tr><td colspan="3" height="3px"></td></tr>
+
+		   <tr>
+		  <td>Niveau : </td>
+		  <td><input type="text" name="niveau" id="niveau" class="input input_size" /></td>
+		   <td>&nbsp;</td>
+		   </tr>
+
+		  <tr><td colspan="3" height="3px"></td></tr>
+		   <tr>
+		  <td>Dipl&ocirc;mes : </td>
+		  <td><input type="text" name="diplome" id="diplome" class="input input_size" /></td>
+		   <td>&nbsp;</td>
+		   </tr>
+
+		  <tr><td colspan="3" height="3px"></td></tr>
+
+		  <tr>
+		  <td>&nbsp;</td>
+		  <td><input type="text" name="diplome1" id="diplome1" class="input input_size"/></td>
+		   <td>&nbsp;</td>
+		  </tr>
+
+		  <tr><td colspan="3" height="3px"></td></tr>
+		  
+		  <tr>
+		  <td>&nbsp;</td>
+		  <td><input type="text" name="diplome2" id="diplome2" class="input input_size"/></td>
+		   <td>&nbsp;</td>
+		  </tr>
+		  
+ 		  <tr><td colspan="3" height="3px"></td></tr>
+		  <tr>
+		  <td>Type : </td>
+		  <td>
+		  <select name="type" class=" input input_size"  style="width:280px">
+		  <option value="Vacataire">Vacataire</option>
+		  <option value="Permanent">Permanent</option>
+          <option value="Potentiel">Potentiel</option>
+		  </select>
+		  </td>
+		   <td>&nbsp;</td>
+		  </tr>
+
+		  <tr><td colspan="3" height="3px"></td></tr>
+
+		  <tr>
+			  <td>Login : </td>
+			  <td><input type="text" name="login" id="login" class="input input_size"/></td>
+			  <td><div id="er_login" class="erreur"></div></td>
+		  </tr>
+
+		  <tr><td colspan="3" height="3px"></td></tr>
+
+		  <tr>
+			  <td>Mot de Passe : </td>
+			  <td><input type="text" name="pass" id="pass" class="input input_size"/></td>
+			  <td><div id="er_pass" class="erreur"></div></td>
+		  </tr>
+		  </table>
+	     </td>
+
+		</tr>  
+
+	  </table>
+
+     </form>
+
+<?php
+
+}
+
+?>

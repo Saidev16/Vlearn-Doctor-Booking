@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>PIIMT - Statistique</title>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/highcharts.js"></script>
+		<script type="text/javascript">
+		
+var chart;
+$(document).ready(function() {
+   chart = new Highcharts.Chart({
+      chart: {
+         renderTo: 'container3',
+         defaultSeriesType: 'column'
+      },
+      title: {
+         text: 'Performance Academique'
+      },
+      xAxis: {
+         categories: ['Fall 2008']
+      },
+      tooltip: {
+         formatter: function() {
+            return ''+
+                this.series.name +': '+ this.y +'';
+         }
+      },
+      credits: {
+         enabled: false
+      },
+      series: [{
+         name: '<=1.5',
+         data: [0]
+      }, {
+         name: 'Between 1.5-2.5',
+         data: [7]
+      }, {
+         name: 'Between 2.5-3.5',
+         data: [40]
+	  },{ 
+	     name: 'Between 3.5-4.0',
+         data: [29]
+      }]
+   });
+   
+   
+});
+</script>
+		<script type="text/javascript">
+		var chart;
+$(document).ready(function() {
+   chart = new Highcharts.Chart({
+      chart: {
+         renderTo: 'container2',
+         defaultSeriesType: 'line',
+         marginRight: 130,
+         marginBottom: 25
+      },
+      title: {
+         text: 'Admission Grades',
+         x: -20 //center
+      },
+      subtitle: {
+         text: '',
+         x: -20
+      },
+      xAxis: {
+         categories: ['Fall 2008']
+      },
+      yAxis: {
+         title: {
+            text: ''//'Temperature (°C)'
+         },
+         plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+         }]
+      },
+      tooltip: {
+         formatter: function() {
+                   return '<b>'+ this.series.name +'</b><br/>'+
+               this.x +': '+ this.y +'°C';
+         }
+      },
+      legend: {
+         layout: 'horizontal',
+         align: 'left',
+         verticalAlign: 'top',
+         x: 10,
+         y: 100,
+         borderWidth: 1
+      },
+      series: [{
+         name: 'Entre 60 et 65',
+         data: [12,2]
+      }, {
+         name: 'Entre 66 et 79',
+         data: [36,6]
+      }, {
+         name: 'de 80 � 100',
+         data: [11,9]
+      } 
+         
+      ]
+   });
+   
+   
+});
+</script>
+<script type="text/javascript">
+var chart;
+$(document).ready(function() {
+   chart = new Highcharts.Chart({
+      chart: {
+         renderTo: 'container1',
+         defaultSeriesType: 'line',
+         marginRight: 130,
+         marginBottom: 25
+      },
+      title: {
+         text: 'Recrutement',
+         x: -20 //center
+      },
+      subtitle: {
+         text: '',
+         x: -20
+      },
+      xAxis: {
+         categories: ['Fall 2008']
+      },
+      yAxis: {
+         title: {
+            text: ''
+         },
+         plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+         }]
+      },
+      tooltip: {
+         formatter: function() {
+                   return '<b>'+ this.series.name +'</b><br/>'+
+               this.x +': '+ this.y ;
+         }
+      },
+      legend: {
+         layout: 'horizontal',
+         align: 'right',
+         verticalAlign: 'top',
+         x: 10,
+         y: 100,
+         borderWidth: 0
+      },
+      series: [{
+         name: 'Undergraduate 1st year',
+         data: [13,5]
+      }, {
+         name: 'Undergraduate 2nd year',
+         data: [19,7]
+      }, {
+         name: 'Undergraduate 3d and 4th year',
+         data: [14,3]
+      }, {
+         name: 'Grad 1st year',
+         data: [7,2]
+      }, {
+         name: 'Grad 2nd year',
+         data: [6,0]
+      }, {
+         name: 'Total scholarships awarded',
+         data: [7,5]
+      }, {
+         name: 'Total admission',
+         data: [59,17]
+      }
+	  
+	  
+	  
+	  ]
+   });
+   
+   
+});
+</script>
+</head>
+<body>
+<div id="container3" style="width: 800px; height: 400px; margin: 0 auto">
+</div>
+<div id="container2" style="width: 800px; height: 400px; margin: 0 auto">
+</div>
+<div id="container1" style="width: 800px; height: 400px; margin: 0 auto">
+</div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+[08-Nov-2019 09:08:21 America/Los_Angeles] PHP Parse error:  syntax error, unexpected T_INCLUDE in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 3
+[08-Nov-2019 09:10:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected T_INCLUDE in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 3
+[08-Nov-2019 09:15:32 America/Los_Angeles] PHP Parse error:  syntax error, unexpected T_STRING in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 4
+[08-Nov-2019 09:17:33 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:17:33 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:17:33 America/Los_Angeles] PHP Warning:  include(functions.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 3
+[08-Nov-2019 09:17:33 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'functions.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 3
+[08-Nov-2019 09:17:33 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_global_result_by_session() in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 18
+[08-Nov-2019 09:17:55 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:17:55 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:17:55 America/Los_Angeles] PHP Warning:  include(functions.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 3
+[08-Nov-2019 09:17:55 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'functions.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 3
+[08-Nov-2019 09:17:55 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_global_result_by_session() in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 18
+[08-Nov-2019 09:18:03 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:18:03 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:18:03 America/Los_Angeles] PHP Warning:  include(functions.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 3
+[08-Nov-2019 09:18:03 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'functions.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 3
+[08-Nov-2019 09:18:03 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_global_result_by_session() in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 18
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:18:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 66
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:16 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 66
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:22 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 66
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:19:54 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 66
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 62
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:20:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 62
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:21:14 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 62
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  include(../../administrator/config/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../../administrator/config/config.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 2
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 46
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 09:22:24 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 62
+[08-Nov-2019 14:32:41 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:32:47 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:32:47 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:32:49 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:32:49 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:32:49 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[08-Nov-2019 14:33:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:33:26 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:33:27 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:33:29 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:33:29 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 14:33:29 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[08-Nov-2019 15:19:59 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:20:09 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:20:09 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:20:12 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:20:13 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:20:13 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[08-Nov-2019 15:23:28 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:34 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:35 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:36 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:36 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:36 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[08-Nov-2019 15:23:45 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:50 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:51 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:52 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:23:53 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[08-Nov-2019 15:23:56 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:24:00 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:24:01 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:24:02 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:24:03 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:24:03 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[08-Nov-2019 15:28:36 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:28:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:28:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:28:43 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:28:44 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:28:44 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[08-Nov-2019 15:28:57 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:29:01 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:29:02 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:29:03 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:29:03 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[08-Nov-2019 15:29:03 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 02:11:15 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 02:11:23 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 02:11:24 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 02:11:25 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 02:11:25 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 02:11:25 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 03:22:27 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:22:31 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:22:32 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:22:33 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:22:34 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:22:34 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 03:22:50 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:22:56 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:22:57 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:23:00 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:23:00 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:23:00 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 03:24:36 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:24:42 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:24:43 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:24:45 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:24:45 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 03:24:45 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 05:30:16 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 05:30:21 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 05:30:21 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 05:30:23 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 05:30:23 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 05:30:23 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 07:16:10 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:16:16 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:16:17 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:16:18 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:16:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:16:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 07:58:05 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:58:10 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:58:11 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:58:12 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:58:12 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 07:58:12 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 08:23:20 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:23:28 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:23:29 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:23:30 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:23:31 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:23:31 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 08:23:51 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:23:56 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:23:57 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:23:59 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:24:00 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 50
+[12-Nov-2019 08:24:00 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 08:27:59 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:27:59 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:27:59 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:27:59 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:27:59 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:27:59 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 08:28:06 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:06 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:06 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:07 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:07 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:07 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95
+[12-Nov-2019 08:28:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/functions.php on line 49
+[12-Nov-2019 08:28:19 America/Los_Angeles] PHP Warning:  Division by zero in /home/sisaulm/public_html/newsis/module/surveys/resultat/AJAX/function_ajax.php on line 95

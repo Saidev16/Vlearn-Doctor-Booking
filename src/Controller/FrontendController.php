@@ -17,4 +17,14 @@ class FrontendController extends AbstractController
             'controller_name' => 'FrontendController',
         ]);
     }
+
+
+
+    /**
+     * @Route("/logged", name="Logged")
+     */
+    public function welcome(): Response
+    {
+        return $this->render('frontend/logged.html.twig');
+    }
 }

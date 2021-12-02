@@ -3,7 +3,7 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form method="post">
+{# <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -22,23 +22,72 @@
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
-    >
+    > #}
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+   			<div class="content" style='margin-bottom : 8rem;' >
+				<div class="container-fluid">
+					
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+                        {% if app.user %}
+                            <div class="mb-3">
+                                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                            </div>
+                        {% endif %}
+							
+							<!-- Login Tab Content -->
+							<div class="account-content">
+								<div class="row align-items-center justify-content-center">
+									<div class="col-md-7 col-lg-6 login-left">
+										<img src="assets/img/login-banner.png" class="img-fluid" alt="Doccure Login">	
+									</div>
+									<div class="col-md-12 col-lg-6 login-right">
+										<div class="login-header">
+											<h3>Login <span>EasyDoc</span></h3>
+										</div>
+										<form method='post'>
+											<div class="form-group form-focus">
+												<input value="{{ last_username }}" name='email' id='inputEmail' autocomplete="email" required type="email" class="form-control floating">
+												<label class="focus-label">Email</label>
+											</div>
+											<div class="form-group form-focus">
+												<input name="password" id='inputPassword' autocomplete='email' required type="password" class="form-control floating">
+												<label class="focus-label">Password</label>
+											</div>
+											<div class="text-right">
+												<a class="forgot-link" href="">Forgot Password ?</a>
+											</div>
+											<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Login</button>
+											<div class="login-or">
+												<span class="or-line"></span>
+												<span class="span-or">or</span>
+											</div>
+											<div class="text-center dont-have">Don’t have an account? <a href="{{ path('app_register') }}">Register</a></div>
+										
+                                                <input type="hidden" name="_csrf_token"
+                                                        value="{{ csrf_token('authenticate') }}"
+                                                >
+                                                <button class="btn btn-lg btn-primary" type='submit' >Sign in</button>
+
+                                        </form>
+									</div>
+								</div>
+							</div>
+							<!-- /Login Tab Content -->
+								
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+
 
 
 {% endblock %}
