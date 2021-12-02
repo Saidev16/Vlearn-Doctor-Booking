@@ -6,7 +6,21 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            		<!-- Favicons -->
+                    
+                <link type="image/x-icon" href="{{ asset('assets/img/favicon.png')}}" rel="icon">
+                
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}" >
+                
+                <!-- Fontawesome CSS -->
+                <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
+                <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css')}}">
+                
+                <!-- Main CSS -->
+                <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+
+
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +28,20 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}  {% endblock %}
+
+
+        <script src="{{aseet('assets/js/jquery.min.js')}}"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="{{aseet('assets/js/popper.min.js')}}"></script>
+		<script src="{{aseet('assets/js/bootstrap.min.js')}}"></script>
+		
+		<!-- Slick JS -->
+		<script src="{{aseet('assets/js/slick.js')}}"></script>
+		
+		<!-- Custom JS -->
+		<script src="{{aseet('assets/js/script.js')}}"></script>
+
     </body>
 </html>
