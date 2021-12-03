@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 
 class AdminController extends AbstractController
 {
@@ -38,8 +40,8 @@ class AdminController extends AbstractController
 
             $entityManager->persist($user);
             $entityManager->flush();
+            return $this->redirectToRoute('user_index');
 
-            dd('doctor added', $form->getData());
 
         }
 
