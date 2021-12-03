@@ -1,5 +1,14 @@
 {% extends 'base_admin.html.twig' %}
 
 {% block body %}
-        {{form(addDoctor)}}
+
+        <div class="card">
+                <div class="card-header">
+                    Add a doctor
+                </div>
+                <div class="card-body">
+                            {{form(addDoctor)}}       
+                </div>
+        </div>
+
 {% endblock %}

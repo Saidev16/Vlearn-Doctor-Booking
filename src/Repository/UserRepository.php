@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
@@ -16,9 +17,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
-{
-    public function __construct(ManagerRegistry $registry)
+{ 
+    public $em;
+    public function __construct(ManagerRegistry $registry , EntityManagerInterface $entityManager)
     {
+        $this->em = $entityManager; 
         parent::__construct($registry, User::class);
     }
 
@@ -36,6 +39,16 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
+    public function findByRole($role)//par exemple $role ="ROLE_GESTIONNAIRE"
+    {
+        $qb = $this->em->createQueryBuilder();
+        $qb->select('u')
+        ->from(User::class, 'u')
+        ->where('u.roles LIKE :roles')
+        ->setParameter('roles', '%"'.$role.'"%')
+        ;
+        return $qb->getQuery()->getResult();
+    }
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

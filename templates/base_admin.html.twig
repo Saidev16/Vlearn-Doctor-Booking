@@ -178,12 +178,16 @@
 							<li class="menu-title"> 
 								<span>Main</span>
 							</li>
-							<li> 
-								<a href="index.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
-							</li>
-							
+
+							<li class="submenu">
+								<a href="#"><i class="fe fe-document"></i> <span> Doctors</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="{{path('adminAddDoctor')}}">Add Doctor</a></li>
+									<li><a href="{{path('user_index')}}">Doctors List</a></li>
 								</ul>
 							</li>
+
+
 						</ul>
 					</div>
                 </div>
