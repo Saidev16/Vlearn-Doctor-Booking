@@ -13,18 +13,20 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
-class RegistrationController extends AbstractController
+class AdminController extends AbstractController
 {
     /**
-     * @Route("/register", name="app_register")
+     * @Route("/admin/addDoctor", name="adminAddDoctor")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
+    public function add(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $passwordEntred =  $form->get('plainPassword')->getData();
+
             // encode the plain password
             $user->setPassword(
             $userPasswordEncoder->encodePassword(
@@ -32,22 +34,18 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setRoles(["ROLE_PATIENT"]);
+            $user->setRoles(["ROLE_DOCTOR"]);
 
             $entityManager->persist($user);
             $entityManager->flush();
-            // do anything else you need here, like send an email
 
-            return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $authenticator,
-                'main' // firewall name in security.yaml
-            );
+            dd('doctor added', $form->getData());
+
         }
 
-        return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form->createView(),
+        return $this->render('admin/addDoctor.html.twig', [
+            'addDoctor' => $form->createView(),
         ]);
+
     }
 }

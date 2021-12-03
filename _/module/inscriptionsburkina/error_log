@@ -1,3 +1,0 @@
-[15-Dec-2020 14:52:06 UTC] PHP Warning:  file_get_contents(styletable.css): failed to open stream: No such file or directory in /home/hisadm/public_html/module/inscriptionsburkina/transfer_sheet.php on line 195
-[15-Dec-2020 14:52:07 UTC] PHP Warning:  file_get_contents(styletable.css): failed to open stream: No such file or directory in /home/hisadm/public_html/module/inscriptionsburkina/transfer_sheet.php on line 195
-[15-Dec-2020 14:52:08 UTC] PHP Warning:  file_get_contents(styletable.css): failed to open stream: No such file or directory in /home/hisadm/public_html/module/inscriptionsburkina/transfer_sheet.php on line 195

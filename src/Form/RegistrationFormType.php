@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -23,7 +24,12 @@ class RegistrationFormType extends AbstractType
             ->add('username', TextType::class)
             ->add('phone_number', TextType::class)
             ->add('adress', TextType::class)
-            ->add('gender', TextType::class)
+            ->add('gender', ChoiceType::class, [
+                'choices'=> [
+                    'Male'=>'Male',
+                    'Female'=>'Female'
+                ]
+            ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
