@@ -61,7 +61,7 @@ class Appointments
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -72,4 +72,10 @@ class Appointments
 
         return $this;
     }
+
+    public function __construct()
+    {
+        $this->created_at= new \DateTime();
+    }
+
 }

@@ -35,12 +35,12 @@
 
         </div>
         <div class="card-body">
-        <form action="{{path('check_date')}}" method='post' >
+        <form action="{{path('change_date')}}" method='post' >
 
                 <label for="start">Start date:</label>
 
                 <input type="date" id="start" name="search_date"
-                    value="2021-12-01"
+                    value="{{setted_date}}"
                     min="2021-12-01" max="2031-12-31">
                     <br>
                 <button type="submit" class="btn btn-primary">Check</button>    
@@ -50,10 +50,14 @@
     </div>
 
  
-  <form action="{{path('appointments')}}" method="post" > 
+  <form action="{{path('create_appointments')}}" method="post" > 
 
     <div class="card">
         <div class="card-header">
+        {% if setted_date %}
+            <h3>You are setting time for  {{ setted_date }} </h3>
+        {% endif %}
+          <h3>  </h3>
             Choose AM time
            <span style="margin-left: 700px">Check/Uncheck
                <input type="checkbox"  >
@@ -66,6 +70,7 @@
                
               <tbody>
                 <input type="hidden" name="appointmentId" value="  ">
+                <input type="hidden" id='savedDate' name='searchForDate' >
                 <tr>
                   <th scope="row">1</th>
                   <td><input type="checkbox" name="time[]"  value="6am" >6am</td>
@@ -74,7 +79,9 @@
                 </tr>
                  <tr>
                   <th scope="row">2</th>
-                  <td><input type="checkbox" name="time[]"  value="7am">7.40am</td>
+                  <td><input type="checkbox" name="time[]"  value="7am">7am</td>
+                  <td><input type="checkbox" name="time[]"  value="7.20am">7.20am</td>
+                  <td><input type="checkbox" name="time[]"  value="7.40am">7.40am</td>
                 </tr>
                  <tr>
                   <th scope="row">3</th>
@@ -93,7 +100,7 @@
                 <tr>
                   <th scope="row">5</th>
                   <td><input type="checkbox" name="time[]"  value="10am">10am</td>
-                  <td><input type="checkbox" name="time[]"  value="10.20am"
+                  <td><input type="checkbox" name="time[]"  value="10.20am"></td>
                   <td><input type="checkbox" name="time[]"  value="10.40am">10.40am</td>
                 </tr>
 
@@ -222,7 +229,14 @@
   </table>
 
 
+<script>
+$(document).ready(function() { 
+    $('#start').change(function() {
+      $('#savedDate').val($('#start').val());
+    });
+});
 
+</script>
 
  
 
