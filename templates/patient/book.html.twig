@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EasyDoc{% endblock %}
+
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 mt-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="text-center">
+                       Informations du docteur
+                    </h4>
+                    <img src="" alt="" width="80" style="border-radius: 50%;">
+                    <br>
+                    <p class="lead mt-3">Nom : </p> 
+                    <p class="lead">Niveau d'études :</p> 
+                    <p class="lead">Spécialité :</p> 
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 mt-3">
+           
+          
+            <div class="card">
+                <div class="card-header lead"></div>
+                <div class="card-body">
+                    
+                    <form action=" " method="POST">
+                        
+                        <div class="row">
+                           
+                            <div class="col-md-3">
+                                <label for="" class="btn btn-outline-primary" style="width: 100px;">
+                                    <input type="radio" name="time" value="2:20">
+                                    <span style="color: #009efb">2:20</span>
+                                </label>
+                            </div>
+                            
+                            <input type="hidden" name="doctorId" value="">
+                            <input type="hidden" name="appointmentId" value="">
+                            <input type="hidden" name="date" value="">
+                            
+                        </div>
+                        <div class="card-footer mt-3">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Book appointment</button>
+                            <h5>Veuillez se connecter pour réserver une consultation</h5>
+                            <a href="/register"><button class="btn btn-primary" >S'inscrire</button></a>
+                                <a href="/login"><button class="btn btn-primary">Se Connecter</button></a>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
