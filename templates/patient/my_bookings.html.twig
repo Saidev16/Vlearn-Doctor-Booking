@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block title %}EasyDoc{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Your appontments </div>
+
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Doctor</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Date for</th>
+                            <th scope="col">Created date</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% if bookings %}
+                            {% for booking in bookings %}
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>{{ doctor.getUserName() }}</td>
+                                    <td>{{ booking.getTime() }}</td>
+                                    <td>{{ booking.getDate() }}</td>
+                                    <td>{{ booking.getCreatedAt() |date('Y-m-d') }}</td>
+                                    <td>
+                                        {% if booking.status == 0 %}
+                                            <button class="btn btn-primary">Not vidited</button>
+                                        {% else %}
+                                            <button class="btn btn-success">Cheked</button>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                                <td>You have no appointments</td>
+                        {% endif %}
+                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

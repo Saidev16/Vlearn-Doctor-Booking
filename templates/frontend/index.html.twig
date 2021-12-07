@@ -6,7 +6,12 @@
     		<!-- Main Wrapper -->
 		<div class="main-wrapper">
 		
-			
+			{% for message in app.flashes('noAppointment') %}
+				<div class=" alert alert-danger">
+					{{ message }}
+				</div>
+			{% endfor %}
+
 			<!-- Home Banner -->
 			<section class="section section-search">
 				<div class="container-fluid ">

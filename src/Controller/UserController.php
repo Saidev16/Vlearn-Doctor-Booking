@@ -22,7 +22,7 @@ class UserController extends AbstractController
     public function index(UserRepository $userRepository): Response
     {
         return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findByRole("ROLE_DOCTOR")
+            'users' => $userRepository->findByRole("ROLE_PATIENT")
         ]);
     }
 
