@@ -24,7 +24,18 @@
 
   {# <form action="  "  method="POST">  #}
     
-  
+  {% for message in app.flashes('appointmentSuccess') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+  {% endfor %}
+
+  {% for message in app.flashes('appointmentAlert') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+  {% endfor %}
+
   
     <div class="card">
         <div class="card-header">
@@ -60,7 +71,7 @@
           <h3>  </h3>
             Choose AM time
            <span style="margin-left: 700px">Check/Uncheck
-               <input type="checkbox"  >
+               <input type="checkbox" onchange="checkAll(this)"   >
            </span>
         </div>
         <div class="card-body">
@@ -100,7 +111,7 @@
                 <tr>
                   <th scope="row">5</th>
                   <td><input type="checkbox" name="time[]"  value="10am">10am</td>
-                  <td><input type="checkbox" name="time[]"  value="10.20am"></td>
+                  <td><input type="checkbox" name="time[]"  value="10.20am">10.20am</td>
                   <td><input type="checkbox" name="time[]"  value="10.40am">10.40am</td>
                 </tr>
 
@@ -183,9 +194,9 @@
                 </tr>
                 <tr>
                   <th scope="row">15</th>
-                  <td><input type="checkbox" name="time[]"  value="9pm">9pm</td>
-                  <td><input type="checkbox" name="time[]"  value="9.20pm">9.20pm</td>
-                  <td><input type="checkbox" name="time[]"  value="9.40pm">9.40pm</td>
+                  <td><input type="checkbox" name="time[]" class='checkboxAll'  value="9pm">9pm</td>
+                  <td><input type="checkbox" name="time[]" class='checkboxAll' value="9.20pm">9.20pm</td>
+                  <td><input type="checkbox" name="time[]" class='checkboxAll' value="9.40pm">9.40pm</td>
                 </tr>
                 
             
@@ -230,15 +241,27 @@
 
 
 <script>
-$(document).ready(function() { 
-    $('#start').change(function() {
-      $('#savedDate').val($('#start').val());
-    });
-});
+ function checkAll(ele) {
+     var checkboxes = document.getElementsByTagName('input');
+     if (ele.checked) {
+         for (var i = 0; i < checkboxes.length; i++) {
+             if (checkboxes[i].type == 'checkbox') {
+                 checkboxes[i].checked = true;
+             }
+         }
+     } else {
+         for (var i = 0; i < checkboxes.length; i++) {
+             console.log(i)
+             if (checkboxes[i].type == 'checkbox') {
+                 checkboxes[i].checked = false;
+             }
+         }
+     }
+ }
 
 </script>
 
- 
+
 
   
 

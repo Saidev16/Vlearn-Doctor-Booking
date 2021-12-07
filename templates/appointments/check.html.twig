@@ -1,0 +1,282 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+           
+
+            <div class="page-header-title">
+                <i class="ik ik-command bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Doctors</h5>
+                    <span>appoinment time</span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% for message in app.flashes('dateNotFound') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+{% for message in app.flashes('appointmentUpdated') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+<div class="container">
+  
+
+  {# <form action="  "  method="POST">  #}
+    
+
+  
+    <div class="card">
+        <div class="card-header">
+            Choose date
+            <br>
+            
+              Your timetable for:
+
+        </div>
+        <div class="card-body">
+        <form action="{{path('changeCheckDate')}}" method='post' >
+
+                <label for="start">Start date:</label>
+
+                <input type="date" id="start" name="appointment_check_date"
+                    value="{{setted_date}}"
+                    min="2021-12-01" max="2031-12-31">
+                    <br>
+                <button type="submit" class="btn btn-primary">Check</button>    
+
+        </form>
+        </div>
+    </div>
+
+ 
+  <form action="{{path('update_appointments')}}" method="post" > 
+
+    <div class="card">
+        <div class="card-header">
+        {% if setted_date %}
+            <h3>You are setting time for  {{ setted_date }} </h3>
+        {% endif %}
+          <h3>  </h3>
+            Choose AM time
+           <span style="margin-left: 700px">Check/Uncheck
+               <input type="checkbox" onchange="checkAll(this)" >
+           </span>
+        </div>
+        <div class="card-body">
+            
+            <table class="table table-striped">
+             
+               
+              <tbody>
+                <input type="hidden" name="appointmentId" value="{% if checkedDates is defined %}{{appointment_id}}{% endif %}">
+                <input type="hidden" id='savedDate' name='searchForDate' >
+                <tr>
+                  <th scope="row">1</th>
+                  <td><input type="checkbox" name="time[]" {% if checkedDates is defined %} {% if '6am' in checkedDates  %}checked {% endif %} {% endif %}   value="6am" >6am</td>
+                  <td><input type="checkbox" name="time[]"  value="6.20am"{% if checkedDates is defined %} {% if '6.20am' in checkedDates  %}checked {% endif %} {% endif %} >6.20am</td>
+                  <td><input type="checkbox" name="time[]"  value="6.40am" {% if checkedDates is defined %}{% if '6.40am' in checkedDates  %}checked {% endif %}{% endif %} >6.40am</td>
+                </tr>
+                 <tr>
+                  <th scope="row">2</th>
+                  <td><input type="checkbox" name="time[]"  value="7am" {% if checkedDates is defined %}{% if '7am' in checkedDates  %}checked {% endif %}{% endif %}>7am</td>
+                  <td><input type="checkbox" name="time[]"  value="7.20am" {% if checkedDates is defined %}{% if '7.20am' in checkedDates  %}checked {% endif %} {% endif %}>7.20am</td>
+                  <td><input type="checkbox" name="time[]"  value="7.40am" {% if checkedDates is defined %}{% if '7.40am' in checkedDates  %}checked {% endif %} {% endif %} >7.40am</td>
+                </tr>
+                 <tr>
+                  <th scope="row">3</th>
+                  <td><input type="checkbox" name="time[]"  value="8am" {% if checkedDates is defined %} {% if '8am' in checkedDates  %}checked {% endif %} {% endif %} >8am</td>
+                  <td><input type="checkbox" name="time[]"  value="8.20am" {% if checkedDates is defined %} {% if '8.20am' in checkedDates  %}checked {% endif %} {% endif %} >8.20am</td>
+                  <td><input type="checkbox" name="time[]"  value="8.40am" {% if checkedDates is defined %}{% if '8.40am' in checkedDates  %}checked {% endif %} {% endif %} >8.40am</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">4</th>
+                  <td><input type="checkbox" name="time[]"  value="9am" {% if checkedDates is defined %} {% if '9am' in checkedDates  %}checked {% endif %} {% endif %} >9am</td>
+                  <td><input type="checkbox" name="time[]"  value="9.20am" {% if checkedDates is defined %}{% if '9.20am' in checkedDates  %}checked {% endif %} {% endif %} >9.20am</td>
+                  <td><input type="checkbox" name="time[]"  value="9.40am" {% if checkedDates is defined %} {% if '9.40am' in checkedDates  %}checked {% endif %} {% endif %} >9.40am</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">5</th>
+                  <td><input type="checkbox" name="time[]"  value="10am" {% if checkedDates is defined %} {% if '10am' in checkedDates  %}checked {% endif %} {% endif %} >10am</td>
+                  <td><input type="checkbox" name="time[]"  value="10.20am"{% if checkedDates is defined %} {% if '10.20am' in checkedDates  %}checked {% endif %} {% endif %} >10.20am</td>
+                  <td><input type="checkbox" name="time[]"  value="10.40am" {% if checkedDates is defined %} {% if '10.40am' in checkedDates  %}checked {% endif %} {% endif %} >10.40am</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">6</th>
+                  <td><input type="checkbox" name="time[]"  value="11am" {% if checkedDates is defined %} {% if '11am' in checkedDates  %}checked {% endif %} {% endif %} >11am</td>
+                  <td><input type="checkbox" name="time[]"  value="11.20am" {% if checkedDates is defined %} {% if '11.20am' in checkedDates  %}checked {% endif %} {% endif %} >11.20am</td>
+                  <td><input type="checkbox" name="time[]"  value="11.40am" {% if checkedDates is defined %} {% if '11.40am' in checkedDates  %}checked {% endif %} {% endif %} >11.40am</td>
+                </tr>
+            
+            
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+        <div class="card">
+        <div class="card-header">
+            Choose PM time
+        </div>
+        <div class="card-body">
+            
+            <table class="table table-striped">
+             
+               
+              <tbody>
+                <tr>
+                  <th scope="row">7</th>
+                  <td><input type="checkbox" name="time[]"  value="12pm"{% if checkedDates is defined %}{% if '12pm' in checkedDates  %}checked {% endif %} {% endif %} >12pm</td>
+                  <td><input type="checkbox" name="time[]"  value="12.20pm" {% if checkedDates is defined %}{% if '12.20pm' in checkedDates  %}checked {% endif %} {% endif %} >12.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="12.40pm" {% if checkedDates is defined %} {% if '12.40pm' in checkedDates  %}checked {% endif %} {% endif %} >12.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td><input type="checkbox" name="time[]"  value="1pm"  {% if checkedDates is defined %} {% if '1pm' in checkedDates  %}checked {% endif %} {% endif %} >1pm</td>
+                  <td><input type="checkbox" name="time[]"  value="1.20pm" {% if checkedDates is defined %} {% if '1.20pm' in checkedDates  %}checked {% endif %} {% endif %}>1.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="1.40pm" {% if checkedDates is defined %} {% if '1.40pm' in checkedDates  %}checked {% endif %} {% endif %} >1.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td><input type="checkbox" name="time[]"  value="2pm" {% if checkedDates is defined %} {% if '2pm' in checkedDates  %}checked {% endif %} {% endif %} >2pm</td>
+                  <td><input type="checkbox" name="time[]"  value="2.20pm" {% if checkedDates is defined %} {% if '2.20pm' in checkedDates  %}checked {% endif %} {% endif %} >2.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="2.40pm" {% if checkedDates is defined %} {% if '2.40pm' in checkedDates  %}checked {% endif %} {% endif %} >2.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td><input type="checkbox" name="time[]"  value="3pm" {% if checkedDates is defined %} {% if '3pm' in checkedDates  %}checked {% endif %} {% endif %} >3pm</td>
+                  <td><input type="checkbox" name="time[]"  value="3.20pm" {% if checkedDates is defined %} {% if '3.20pm' in checkedDates  %}checked {% endif %} {% endif %} >3.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="3.40pm" {% if checkedDates is defined %} {% if '3.40pm' in checkedDates  %}checked {% endif %} {% endif %} >3.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td><input type="checkbox" name="time[]"  value="4pm"  {% if checkedDates is defined %}{% if '4pm' in checkedDates  %}checked {% endif %} {% endif %} >4pm</td>
+                  <td><input type="checkbox" name="time[]"  value="4.20pm" {% if checkedDates is defined %}{% if '4.20pm' in checkedDates  %}checked {% endif %} {% endif %} >4.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="4.40pm" {% if checkedDates is defined %}{% if '4.40pm' in checkedDates  %}checked {% endif %} {% endif %} >4.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">11</th>
+                  <td><input type="checkbox" name="time[]"  value="5pm" {% if checkedDates is defined %} {% if '5pm' in checkedDates  %}checked {% endif %} {% endif %} >5pm</td>
+                  <td><input type="checkbox" name="time[]"  value="5.20pm"{% if checkedDates is defined %} {% if '5.20pm' in checkedDates  %}checked {% endif %} {% endif %} >5.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="5.40pm" {% if checkedDates is defined %} {% if '5.40am' in checkedDates  %}checked {% endif %} {% endif %} >5.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">12</th>
+                  <td><input type="checkbox" name="time[]"  value="6pm" {% if checkedDates is defined %} {% if '6pm' in checkedDates  %}checked {% endif %} {% endif %}>6pm</td>
+                  <td><input type="checkbox" name="time[]"  value="6.20pm" {% if checkedDates is defined %} {% if '6.20pm' in checkedDates  %}checked {% endif %}{% endif %}>6.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="6.40pm" {% if checkedDates is defined %} {% if '6.40pm' in checkedDates  %}checked {% endif %}{% endif %}>6.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">13</th>
+                  <td><input type="checkbox" name="time[]"  value="7pm" {% if checkedDates is defined %} {% if '7pm' in checkedDates  %}checked {% endif %}{% endif %}>7pm</td>
+                  <td><input type="checkbox" name="time[]"  value="7.20pm" {% if checkedDates is defined %} {% if '7.20pm' in checkedDates  %}checked {% endif %}{% endif %}>7.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="7.40pm" {% if checkedDates is defined %} {% if '7.40pm' in checkedDates  %}checked {% endif %}{% endif %}>7.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">14</th>
+                  <td><input type="checkbox" name="time[]"  value="8pm" {% if checkedDates is defined %} {% if '8pm' in checkedDates  %}checked {% endif %} {% endif %}>8pm</td>
+                  <td><input type="checkbox" name="time[]"  value="8.20pm" {% if checkedDates is defined %} {% if '8.20pm' in checkedDates  %}checked {% endif %}{% endif %}>8.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="8.40pm" {% if checkedDates is defined %} {% if '8.40pm' in checkedDates  %}checked {% endif %}{% endif %}>8.40pm</td>
+                </tr>
+                <tr>
+                  <th scope="row">15</th>
+                  <td><input type="checkbox" name="time[]"  value="9pm" {% if checkedDates is defined %} {% if '9pm' in checkedDates  %}checked {% endif %} {% endif %}>9pm</td>
+                  <td><input type="checkbox" name="time[]"  value="9.20pm" {% if checkedDates is defined %} {% if '9.20pm' in checkedDates  %}checked {% endif %} {% endif %}>9.20pm</td>
+                  <td><input type="checkbox" name="time[]"  value="9.40pm"{% if checkedDates is defined %}{% if '9.40pm' in checkedDates  %}checked {% endif %} {% endif %}>9.40pm</td>
+                </tr>
+                
+            
+            
+              </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    
+</div>
+</form>
+
+  <h3>Your appointment time list: </h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Creator</th>
+        <th scope="col">Date</th>
+        <th scope="col">View/update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td> </td>
+        <td></td>
+        <td>
+          <form action="  " method="POST"> 
+              <input type="hidden" name="date" value='' >
+              <button type="submit" class="btn btn-primary" >View/Update</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<script>
+ function checkAll(ele) {
+     var checkboxes = document.getElementsByTagName('input');
+     if (ele.checked) {
+         for (var i = 0; i < checkboxes.length; i++) {
+             if (checkboxes[i].type == 'checkbox') {
+                 checkboxes[i].checked = true;
+             }
+         }
+     } else {
+         for (var i = 0; i < checkboxes.length; i++) {
+             console.log(i)
+             if (checkboxes[i].type == 'checkbox') {
+                 checkboxes[i].checked = false;
+             }
+         }
+     }
+ }
+
+</script>
+
+
+  
+
+<style type="text/css">
+    input[type="checkbox"]{
+        zoom:1.5;
+
+    }
+    body{
+        font-size: 15px;
+    }
+    input{
+        margin-right: 4px;
+    }
+</style>
+
+  {% endblock %}
+
+
+

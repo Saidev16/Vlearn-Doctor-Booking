@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\AppointmentsRepository;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,12 +24,12 @@ class Appointments
     private $user_id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="string")
      */
     private $date;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $created_at;
 
@@ -49,12 +50,12 @@ class Appointments
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?string
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(string $date): self
     {
         $this->date = $date;
 
@@ -66,7 +67,7 @@ class Appointments
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
+    public function setCreatedAt(DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
 
@@ -75,7 +76,7 @@ class Appointments
 
     public function __construct()
     {
-        $this->created_at= new \DateTime();
+        $this->created_at= new \DateTime('@'.strtotime('now'));
     }
 
 }
