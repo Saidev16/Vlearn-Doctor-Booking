@@ -15,9 +15,9 @@
                     </h4>
                     <img src="" alt="" width="80" style="border-radius: 50%;">
                     <br>
-                    <p class="lead mt-3">Nom : </p> 
-                    <p class="lead">Niveau d'études :</p> 
-                    <p class="lead">Spécialité :</p> 
+                    <p class="lead mt-3">Name : {{ doctor.getUserName() }}</p> 
+                    <p class="lead">Education : {{ doctor.getEducation() }}</p> 
+                    <p class="lead">Description : {{ doctor.getDescription() }}</p> 
                 </div>
             </div>
         </div>
@@ -25,30 +25,34 @@
            
           
             <div class="card">
-                <div class="card-header lead"></div>
+                <div class="card-header lead"> <h4>Book appointment for {{date}}</h4> </div>
                 <div class="card-body">
                     
-                    <form action=" " method="POST">
+                    <form action="{{ path('store_booking') }}" method="POST">
                         
                         <div class="row">
-                           
-                            <div class="col-md-3">
-                                <label for="" class="btn btn-outline-primary" style="width: 100px;">
-                                    <input type="radio" name="time" value="2:20">
-                                    <span style="color: #009efb">2:20</span>
-                                </label>
-                            </div>
+                           {% for time in times %}
+                                <div class="col-md-3">
+                                    <label for="" class="btn btn-outline-primary" style="width: 100px;height:3.7rem;">
+                                        <span style="color: #009efb">{{ time.time }}</span> <br>
+                                        <input type="radio" name="time" value="{{ time.time }}" style="zoom:1.35; " >
+                                    </label>
+                                </div>
                             
-                            <input type="hidden" name="doctorId" value="">
-                            <input type="hidden" name="appointmentId" value="">
-                            <input type="hidden" name="date" value="">
+                            <input type="hidden" name="doctorId" value="{{doctor.getId()}}">
+                            <input type="hidden" name="appointmentId" value="{{appointment.getId()}}">
+                            <input type="hidden" name="date" value="{{date}}">
                             
+                            {% endfor %}
                         </div>
                         <div class="card-footer mt-3">
+                        {% if app.user %}
                             <button type="submit" class="btn btn-primary" style="width: 100%;">Book appointment</button>
-                            <h5>Veuillez se connecter pour réserver une consultation</h5>
-                            <a href="/register"><button class="btn btn-primary" >S'inscrire</button></a>
-                                <a href="/login"><button class="btn btn-primary">Se Connecter</button></a>
+                        {% else %}
+                            <h5>Please connect to book an appointment</h5>
+                                <a href=" {{ path('app_login') }} " class='btn btn-primary'>Login </a>
+                                <a href=" {{ path('app_register') }} " class='btn btn-primary'>register </a>
+                        {% endif %}
                         </div>
                     </form>
                     
