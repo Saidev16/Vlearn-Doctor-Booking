@@ -52,6 +52,11 @@ class Booking
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $confirmation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -145,6 +150,18 @@ class Booking
     {
         $this->created_at= new \DateTime();
         $this->updated_at= new \DateTime();
+    }
+
+    public function getConfirmation(): ?int
+    {
+        return $this->confirmation;
+    }
+
+    public function setConfirmation(?int $confirmation): self
+    {
+        $this->confirmation = $confirmation;
+
+        return $this;
     }
 
 }

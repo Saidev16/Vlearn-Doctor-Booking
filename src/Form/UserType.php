@@ -29,7 +29,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('email', TextType::class, [
-                'attr'=>['disabled'=>'disabled']
+                'disabled'=>true
             ])
         ;
     }

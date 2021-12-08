@@ -53,9 +53,19 @@
 							</a>
 						</div>
 						<ul class="main-nav">
-							<li class="active">
-								<a href="index.html">Home</a>
+							<li >
+								<a href="{{path('HomePage') }}">Home</a>
 							</li>
+							{% if is_granted('ROLE_PATIENT') %}
+								<li >
+									<a href='{{ path('myBookings') }}' >My bookings</a>
+								</li>
+							{% endif %}
+							{% if is_granted('ROLE_DOCTOR') %}
+								<li >
+									<a href='{{ path('user_index') }}' >Admin Access</a>
+								</li>
+							{% endif %}
 							<li class="login-link">
 								<a >Login / Signup</a>
 							</li>

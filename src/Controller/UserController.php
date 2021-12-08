@@ -21,8 +21,9 @@ class UserController extends AbstractController
      */
     public function index(UserRepository $userRepository): Response
     {
+        $users = $userRepository->findByRole("ROLE_PATIENT" , ['created_at'=>'DESC']);
         return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findByRole("ROLE_PATIENT")
+            'users' => array_reverse($users)
         ]);
     }
 
@@ -46,6 +47,7 @@ class UserController extends AbstractController
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            // $user->setEmail('dd@gmail.com');
             $entityManager->flush();
 
             return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);

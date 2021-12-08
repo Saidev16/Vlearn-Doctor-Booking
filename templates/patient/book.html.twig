@@ -31,19 +31,25 @@
                     <form action="{{ path('store_booking') }}" method="POST">
                         
                         <div class="row">
-                           {% for time in times %}
-                                <div class="col-md-3">
-                                    <label for="" class="btn btn-outline-primary" style="width: 100px;height:3.7rem;">
-                                        <span style="color: #009efb">{{ time.time }}</span> <br>
-                                        <input type="radio" name="time" value="{{ time.time }}" style="zoom:1.35; " >
-                                    </label>
-                                </div>
-                            
-                            <input type="hidden" name="doctorId" value="{{doctor.getId()}}">
-                            <input type="hidden" name="appointmentId" value="{{appointment.getId()}}">
-                            <input type="hidden" name="date" value="{{date}}">
-                            
-                            {% endfor %}
+                        {% if times is empty %}
+                            <h5 class='ml-7' > No Times available </h5>
+                        {% endif %}
+
+
+                            {% for time in times %}
+                                    <div class="col-md-3">
+                                        <label for="" class="btn btn-outline-primary" style="width: 100px;height:3.7rem;">
+                                            <span style="color: #009efb">{{ time.time }}</span> <br>
+                                            <input type="radio" name="time" value="{{ time.time }}" style="zoom:1.35; " >
+                                        </label>
+                                    </div>
+                                
+                                <input type="hidden" name="doctorId" value="{{doctor.getId()}}">
+                                <input type="hidden" name="appointmentId" value="{{appointment.getId()}}">
+                                <input type="hidden" name="date" value="{{date}}">
+                                
+                                {% endfor %}
+
                         </div>
                         <div class="card-footer mt-3">
                         {% if app.user %}

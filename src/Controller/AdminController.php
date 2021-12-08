@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Booking;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Security\LoginFormAuthenticator;
@@ -49,5 +50,29 @@ class AdminController extends AbstractController
             'addDoctor' => $form->createView(),
         ]);
 
+    }
+
+        /**
+     * @Route("/admin/bookings", name="adminBookings")
+     */
+    public function adminBookings(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $bookingRepo = $this->getDoctrine()->getRepository(Booking::class);
+        $bookings = $bookingRepo->findBy([ 'doctor_id'=>$this->getUser()->getId() ] , ['created_at'=>'DESC']);
+        
+        if( $bookings){
+            $usersRepo = $this->getDoctrine()->getRepository(User::class);
+            $patient = $usersRepo->findOneBy([ 'id'=>$bookings[0]->getUserId() ]);
+        }
+        
+
+
+
+        return $this->render('admin/bookings.html.twig' ,[
+            'patient'=>$patient,
+            'bookings'=>$bookings
+        ]);
+
+            
     }
 }

@@ -65,7 +65,7 @@ class PatientController extends AbstractController
     }
 
     /**
-     * @Route("/storeBooking", name="store_booking")
+     * @Route("patient/storeBooking", name="store_booking")
      */
     public function storeBooking( Request $request , EntityManagerInterface $entityManager ): Response
     {
@@ -83,6 +83,7 @@ class PatientController extends AbstractController
         $bookingEntity->setDoctorId($doctorId);
         $bookingEntity->setTime($time);
         $bookingEntity->setStatus(0);
+        $bookingEntity->setConfirmation(0);
         $bookingEntity->setDate($date);
 
         $entityManager->persist($bookingEntity);
@@ -95,7 +96,7 @@ class PatientController extends AbstractController
     }
 
     /**
-     * @Route("/myBooking", name="myBookings")
+     * @Route("patient/myBooking", name="myBookings")
      */
     public function myBookings( Request $request )
     {
@@ -106,6 +107,8 @@ class PatientController extends AbstractController
         if( $bookings){
             $usersRepo = $this->getDoctrine()->getRepository(User::class);
             $doctor = $usersRepo->findOneBy([ 'id'=>$bookings[0]->getDoctorId() ]);
+        }else{
+            $doctor = null;
         }
         
 

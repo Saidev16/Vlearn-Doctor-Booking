@@ -26,7 +26,7 @@ class AppointmentsController extends AbstractController
     }
 
     /**
-     * @Route("doctor/appointments/create", name="create_appointments")
+     * @Route("admin/appointments/create", name="create_appointments")
      */
     public function create( Request $request , EntityManagerInterface $entityManager): Response
     {
@@ -103,7 +103,7 @@ class AppointmentsController extends AbstractController
 
 
      /**
-     * @Route("doctor/appointments/changeDate", name="change_date")
+     * @Route("admin/appointments/changeDate", name="change_date")
      */
     public function checkDate( Request $request )
     {
@@ -124,7 +124,7 @@ class AppointmentsController extends AbstractController
 
     
     /**
-     * @Route("doctor/appointments/update", name="update_appointments")
+     * @Route("admin/appointments/update", name="update_appointments")
      */
     public function update( Request $request , EntityManagerInterface $entityManager): Response
     {
