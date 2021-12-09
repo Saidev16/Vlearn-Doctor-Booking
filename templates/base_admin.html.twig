@@ -164,8 +164,8 @@
 									<p class="text-muted mb-0">Administrator</p>
 								</div>
 							</div>
-							<a class="dropdown-item" href="profile.html">My Profile</a>
-							<a class="dropdown-item" href="{{path('app_logout')}}">Logout</a>
+							<a class="dropdown-item" href="profile.html">Mon Profile</a>
+							<a class="dropdown-item" href="{{path('app_logout')}}">Se déconnecté</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -182,27 +182,35 @@
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
 							<li class="menu-title"> 
-								<span>Main</span>
+								<span>Principale</span>
 							</li>
 
 							<li class="submenu">
-								<a href="#"><i class="fe fe-user"></i> <span> Doctors</span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-user"></i> <span> Patients</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="{{path('adminAddDoctor')}}">Add Doctor</a></li>
-									<li><a href="{{path('user_index')}}">Patients List</a></li>
+									<li><a href="{{path('adminAddDoctor')}}">Ajouter un patient</a></li>
+									<li><a href="{{path('user_index')}}">Liste des patients</a></li>
 								</ul>
 
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-layout"></i> <span>Appointments</span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-layout"></i> <span>Heures de travail</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="{{path('create_appointments')}}">Create appointment</a></li>
-									<li><a href="{{path('changeCheckDate')}}">Check / update</a></li>
+									<li><a href="{{path('create_appointments')}}">Créer une plage d'heures</a></li>
+									<li><a href="{{path('changeCheckDate')}}">Voir / Créer une plage d'heures</a></li>
 								</ul>
 							</li>
 
 							<li class="submenu">
-								<a href="#"><i class="fe fe-users"></i> <span>Bookings</span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-users"></i> <span>Réservations</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="{{path('adminBookings')}}">Tout les Réservations</a></li>
+									<li><a href="{{path('todayBookings')}}">Réservations d'aujourd'hui </a></li>
+								</ul>
+							</li>
+
+							<li class="submenu">
+								<a href="#"><i class="fe fe-users"></i> <span>Dossier Medical</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="{{path('adminBookings')}}">All bookings</a></li>
 									<li><a href="{{path('todayBookings')}}">Today's booking</a></li>

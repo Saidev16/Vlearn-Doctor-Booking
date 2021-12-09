@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header">Bookings</div>
+                <div class="card-header">Réservations</div>
 
                     {% for message in app.flashes('NoBookingsfound') %}
                         <div class="alert alert-danger">
@@ -20,11 +20,11 @@
                         <thead>
                           <tr>
                             <th scope="col">Date</th>
-                            <th scope="col">User</th>
+                            <th scope="col">Patient</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Time</th>
+                            <th scope="col">Telephone</th>
+                            <th scope="col">Sexe</th>
+                            <th scope="col">Heure</th>
                             <th scope="col">Confirmation</th>
                             <th scope="col">Statut</th>
                           </tr>
@@ -55,17 +55,17 @@
                                                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='width:8rem;'>Cancelled</button>
                                             {% endif %}
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ path('confirmBooking' , {booking : booking.id  , redirection: 2}) }}">Confirm</a>
-                                                    <a class="dropdown-item" href="{{ path('cancelBooking' , {booking : booking.id , redirection: 2}) }}">Cancel</a>
+                                                    <a class="dropdown-item" href="{{ path('confirmBooking' , {booking : booking.id  , redirection: 2}) }}">Confirmer</a>
+                                                    <a class="dropdown-item" href="{{ path('cancelBooking' , {booking : booking.id , redirection: 2}) }}">Annuler</a>
                                                 </div>
 									    </div>
 
                                     </td>
                                     <td>
                                         {% if booking.status == 0 %}
-                                            <a href="{{ path('toggleVisited' , {booking : booking.id , redirection: 2 }) }}"> <button class="btn btn-primary" style='width:7rem;'>Not visited</button> </a> 
+                                            <a href="{{ path('toggleVisited' , {booking : booking.id , redirection: 2 }) }}"> <button class="btn btn-primary" style='width:7rem;'>non visiter</button> </a> 
                                          {% else %}
-                                            <a href="{{ path('toggleVisited' , {booking : booking.id , redirection: 2 }) }}"><button class="btn btn-success" style='width:7rem;'>Visited</button></a> 
+                                            <a href="{{ path('toggleVisited' , {booking : booking.id , redirection: 2 }) }}"><button class="btn btn-success" style='width:7rem;'>visiter</button></a> 
                                         {% endif %}
                                     </td>
                                 </tr>

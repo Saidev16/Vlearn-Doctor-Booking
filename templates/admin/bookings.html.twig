@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header">Bookings</div>
+                <div class="card-header">Réservations</div>
                 {% for message in app.flashes('NoBookingsfound') %}
                         <div class="alert alert-danger">
                             {{ message }}
@@ -15,13 +15,13 @@
 
                     <form  action="{{path('adminBookings')}}" method='post' style='margin-left:3rem;' >
 
-                            <label for="start">Start date:</label>
+                            <label for="start">Filtrer par date:</label>
 
                              <input class='form-control' type="date" id="start" name="bookings_search"
                                 value="2021-12-01"
                                 min="2021-12-01" max="2031-12-31" style='width:13rem;'>
                                 <br>
-                             <button type="submit" class="btn btn-primary">Check</button>    
+                             <button type="submit" class="btn btn-primary">recherche</button>    
 
                     </form>
 
@@ -31,11 +31,11 @@
                         <thead>
                           <tr>
                             <th scope="col">Date</th>
-                            <th scope="col">User</th>
+                            <th scope="col">patient</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Time</th>
+                            <th scope="col">Telephone</th>
+                            <th scope="col">Sexe</th>
+                            <th scope="col">Heure</th>
                             <th scope="col">Confirmation</th>
                             <th scope="col">Statut</th>
                           </tr>

@@ -15,7 +15,7 @@
                     </h4>
                     <img src="" alt="" width="80" style="border-radius: 50%;">
                     <br>
-                    <p class="lead mt-3">Name : {{ doctor.getUserName() }}</p> 
+                    <p class="lead mt-3">Nom : {{ doctor.getUserName() }}</p> 
                     <p class="lead">Education : {{ doctor.getEducation() }}</p> 
                     <p class="lead">Description : {{ doctor.getDescription() }}</p> 
                 </div>
@@ -25,14 +25,14 @@
            
           
             <div class="card">
-                <div class="card-header lead"> <h4>Book appointment for {{date}}</h4> </div>
+                <div class="card-header lead"> <h4>Réservé une consultation pour le {{date}}</h4> </div>
                 <div class="card-body">
                     
                     <form action="{{ path('store_booking') }}" method="POST">
                         
                         <div class="row">
                         {% if times is empty %}
-                            <h5 class='ml-7' > No Times available </h5>
+                            <h5 class='ml-7' > Aucune heure est disponible </h5>
                         {% endif %}
 
 
@@ -53,11 +53,11 @@
                         </div>
                         <div class="card-footer mt-3">
                         {% if app.user %}
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Book appointment</button>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Réserver cette heure</button>
                         {% else %}
-                            <h5>Please connect to book an appointment</h5>
-                                <a href=" {{ path('app_login') }} " class='btn btn-primary'>Login </a>
-                                <a href=" {{ path('app_register') }} " class='btn btn-primary'>register </a>
+                            <h5>Veuillez se connecter pour réserver un rendez-vous</h5>
+                                <a href=" {{ path('app_login') }} " class='btn btn-primary'>Se connecter </a>
+                                <a href=" {{ path('app_register') }} " class='btn btn-primary'>S'inscrire </a>
                         {% endif %}
                         </div>
                     </form>

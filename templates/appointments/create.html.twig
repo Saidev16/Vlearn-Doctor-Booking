@@ -39,22 +39,22 @@
   
     <div class="card">
         <div class="card-header">
-            Choose date
+            Choisir la date
             <br>
             
-              Your timetable for:
+              
 
         </div>
         <div class="card-body">
         <form action="{{path('change_date')}}" method='post' >
 
-                <label for="start">Start date:</label>
+                <label for="start">date:</label>
 
                 <input class='form-control' type="date" id="start" name="search_date"
                     value="{{setted_date}}"
                     min="2021-12-01" max="2031-12-31"  style='width:13rem;'>
                     <br>
-                <button type="submit" class="btn btn-primary">Check</button>    
+                <button type="submit" class="btn btn-primary">recherche</button>    
 
         </form>
         </div>
@@ -66,7 +66,7 @@
     <div class="card">
         <div class="card-header">
         {% if setted_date %}
-            <h3>You are setting time for  {{ setted_date }} </h3>
+            <h3>Vous creez une plage d'heures pour le  {{ setted_date }} </h3>
         {% endif %}
           <h3>  </h3>
             Choose AM time
@@ -214,30 +214,6 @@
 </div>
 </form>
 
-  <h3>Your appointment time list: </h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Creator</th>
-        <th scope="col">Date</th>
-        <th scope="col">View/update</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td> </td>
-        <td></td>
-        <td>
-          <form action="  " method="POST"> 
-              <input type="hidden" name="date" value='' >
-              <button type="submit" class="btn btn-primary" >View/Update</button>
-          </form>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 
 
 <script>

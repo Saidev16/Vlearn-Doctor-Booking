@@ -48,7 +48,7 @@ class AppointmentsController extends AbstractController
             if( $searchAppointment ){
                 $this->addFlash(
                     'appointmentAlert',
-                    'appointment already exist for this day'
+                    "Plage d'heures déja créer pour ce jour"
                 );
 
     
@@ -86,7 +86,7 @@ class AppointmentsController extends AbstractController
             
                 $this->addFlash(
                     'appointmentSuccess',
-                    'appointment created with success'
+                    "Créer avec success"
                 );
 
     
@@ -160,7 +160,7 @@ class AppointmentsController extends AbstractController
             
                 $this->addFlash(
                     'appointmentUpdated',
-                    'appointment updated with success'
+                    "Plage d'heures modifier avec success"
                 );
 
     
@@ -193,7 +193,7 @@ class AppointmentsController extends AbstractController
             if( !$checkAppointment ){
                 $this->addFlash(
                     'dateNotFound',
-                    'date not found go to Create appointment page '
+                    "Les Heures ne sont pas disponibles par ce jour"
                 );
 
     

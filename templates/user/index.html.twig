@@ -1,18 +1,23 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Patients List{% endblock %}
+{% block title %}Liste des patients{% endblock %}
 
 {% block body %}
-    <h1>All Patients</h1>
+
+{% for message in app.flashes('NoBookingsfound') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+
+    <h1>Patients</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Username</th>
-                <th>Adress</th>
-                <th>Phone_number</th>
-                <th>Education</th>
-                <th>Description</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Telephone</th>
                 <th>Gender</th>
                 <th>Email</th>
                 <th>actions</th>
@@ -24,24 +29,22 @@
                 <td>{{ user.username }}</td>
                 <td>{{ user.Adress }}</td>
                 <td>{{ user.phoneNumber }}</td>
-                <td>{{ user.education }}</td>
-                <td>{{ user.description }}</td>
                 <td>{{ user.gender }}</td>
                 <td>{{ user.email }}</td>
                 <td>
                     
-                    <a style='color:white'  href="{{ path('user_show', {'id': user.id}) }}"><button class="btn btn-primary">Show</button></a>
-                    <a  style='color:white' href="{{ path('user_edit', {'id': user.id}) }}"><button class='btn btn-secondary' >edit</button></a>
+                    <a style='color:white'  href="{{ path('user_show', {'id': user.id}) }}"><button class="btn btn-primary">Details</button></a>
+                    <a  style='color:white' href="{{ path('user_edit', {'id': user.id}) }}"><button class='btn btn-secondary' >Modifier</button></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="11">no records found</td>
+                <td colspan="11">Aucun patient trouver</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    <a href="{{ path('adminAddDoctor') }}" style='color:white;' ><button class="btn btn-primary" >Create new</button></a>
+    <a href="{{ path('adminAddDoctor') }}" style='color:white;' ><button class="btn btn-primary" >Creer un patient</button></a>
     
 
     

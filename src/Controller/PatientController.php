@@ -42,7 +42,7 @@ class PatientController extends AbstractController
         if( !$appointment ){
             $this->addFlash(
                 'noAppointment',
-                'No appointments setted for this date'
+                'Aucune donnés disponile pour ce jour'
             );
     
             return $this->redirectToRoute('HomePage');
@@ -51,7 +51,6 @@ class PatientController extends AbstractController
 
         $timesRepo = $this->getDoctrine()->getRepository(Times::class);
         $times = $timesRepo->findBy(['appointment_id'=>$appointment->getId()  , 'booked'=> 0 ]);
-        
         $usersRepo = $this->getDoctrine()->getRepository(User::class);
         $doctor = $usersRepo->findOneBy(['id'=>$appointment->getUserId() ]);
 

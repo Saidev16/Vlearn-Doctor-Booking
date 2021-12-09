@@ -72,10 +72,10 @@ class AdminController extends AbstractController
         }else{
             $this->addFlash(
                 'NoBookingsfound',
-                'No Bookings found'
+                'Aucune Réservations Trouver'
             );
     
-            return $this->redirectToRoute('adminBookings');
+            return $this->redirectToRoute('user_index');
 
         }
         
@@ -107,7 +107,7 @@ class AdminController extends AbstractController
         }else{
             $this->addFlash(
                 'NoBookingsfound',
-                'No Bookings found'
+                'Aucune Réservations Trouver'
             );
     
             return $this->redirectToRoute('adminBookings');
@@ -163,10 +163,16 @@ class AdminController extends AbstractController
         $booking->setConfirmation(1);
         $entityManager->flush();
 
+        // Get user
+        $usersRepo = $this->getDoctrine()->getRepository(User::class);
+        $patient = $usersRepo->findOneBy([ 'id'=> $booking->getUserId() ]);
+        
+
         $mailerService->send(
-            "you appointment is cancelled",
-            "doctor@gmail.com",
-            "patient@gmail.com",
+            "Votre Réservation est confirmé",
+            "ounsa@piimt.us",
+            $patient->getEmail(),
+
             "email/booking_confirmed.html.twig",
             [ "time"=>$booking->getTime() , 'date'=> $booking->getDate()]
         );
@@ -192,10 +198,15 @@ class AdminController extends AbstractController
         $booking->setConfirmation(2);
         $entityManager->flush();
 
+        // Get user
+        $usersRepo = $this->getDoctrine()->getRepository(User::class);
+        $patient = $usersRepo->findOneBy([ 'id'=> $booking->getUserId() ]);
+        
+
         $mailerService->send(
-            "you appointment is cancelled",
-            "doctor@gmail.com",
-            "patient@gmail.com",
+            "Votre Réservation est annulé",
+            "ounsa@piimt.us",
+            $patient->getEmail(),
             "email/booking_cancelled.html.twig",
             [ "time"=>$booking->getTime() , 'date'=> $booking->getDate()]
         );
