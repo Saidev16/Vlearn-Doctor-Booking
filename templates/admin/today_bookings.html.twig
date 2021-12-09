@@ -7,23 +7,12 @@
         <div class="col-md-11">
             <div class="card">
                 <div class="card-header">Bookings</div>
-                {% for message in app.flashes('NoBookingsfound') %}
+
+                    {% for message in app.flashes('NoBookingsfound') %}
                         <div class="alert alert-danger">
                             {{ message }}
                         </div>
-                {% endfor %}
-
-                    <form  action="{{path('adminBookings')}}" method='post' style='margin-left:3rem;' >
-
-                            <label for="start">Start date:</label>
-
-                             <input class='form-control' type="date" id="start" name="bookings_search"
-                                value="2021-12-01"
-                                min="2021-12-01" max="2031-12-31" style='width:13rem;'>
-                                <br>
-                             <button type="submit" class="btn btn-primary">Check</button>    
-
-                    </form>
+                    {% endfor %}
 
             {% if bookings is defined and bookings is not null %}
                 <div class="card-body">
@@ -52,10 +41,11 @@
                                     <td>{{booking.time}}</td>
                                     <td>
                                         {# {% if booking.confirmation == 0 %}
-                                            <a href="{{ path('toggleConfirmation' , {booking : booking.id}) }}"> <button class="btn btn-warning" style='width:8rem;'>Not confirmed</button> </a> 
+                                            <a href="{{ path('toggleConfirmation' , {booking : booking.id , redirection: 2 }) }}"> <button class="btn btn-warning" style='width:8rem;'>Not confirmed</button> </a> 
                                          {% else %}
-                                            <a href="{{ path('toggleConfirmation' , {booking : booking.id}) }}"><button class="btn btn-success" style='width:8rem;'>Confirmed</button></a> 
+                                            <a href="{{ path('toggleConfirmation' , {booking : booking.id , redirection: 2 }) }}"><button class="btn btn-success" style='width:8rem;'>Confirmed</button></a> 
                                         {% endif %} #}
+
                                         <div class="btn-group">
                                             {% if booking.confirmation == 0 %}
                                                 <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='width:8rem;'>Pending</button>
@@ -65,20 +55,18 @@
                                                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='width:8rem;'>Cancelled</button>
                                             {% endif %}
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ path('confirmBooking' , {booking : booking.id}) }}">Confirm</a>
-                                                    <a class="dropdown-item" href="{{ path('cancelBooking' , {booking : booking.id}) }}">Cancel</a>
+                                                    <a class="dropdown-item" href="{{ path('confirmBooking' , {booking : booking.id  , redirection: 2}) }}">Confirm</a>
+                                                    <a class="dropdown-item" href="{{ path('cancelBooking' , {booking : booking.id , redirection: 2}) }}">Cancel</a>
                                                 </div>
 									    </div>
 
                                     </td>
                                     <td>
                                         {% if booking.status == 0 %}
-                                            <a href="{{ path('toggleVisited' , {booking : booking.id}) }}"> <button class="btn btn-primary" style='width:7rem;'>Not visited</button> </a> 
+                                            <a href="{{ path('toggleVisited' , {booking : booking.id , redirection: 2 }) }}"> <button class="btn btn-primary" style='width:7rem;'>Not visited</button> </a> 
                                          {% else %}
-                                            <a href="{{ path('toggleVisited' , {booking : booking.id}) }}"><button class="btn btn-success" style='width:7rem;'>Visited</button></a> 
+                                            <a href="{{ path('toggleVisited' , {booking : booking.id , redirection: 2 }) }}"><button class="btn btn-success" style='width:7rem;'>Visited</button></a> 
                                         {% endif %}
-
-
                                     </td>
                                 </tr>
                             {% endfor %}

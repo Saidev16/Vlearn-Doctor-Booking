@@ -73,6 +73,7 @@ class AppointmentsController extends AbstractController
                 $time->setAppointmentId( $appointment->getId() );
                 $time->setTime( $timedata );
                 $time->setStatus( 0 );
+                $time->setBooked( 0 );
                 $entityManager->persist($time);
                 
 
@@ -146,6 +147,7 @@ class AppointmentsController extends AbstractController
                 $time->setAppointmentId( (int)$appointmentId );
                 $time->setTime( $timedata );
                 $time->setStatus( 0 );
+                $time->setBooked( 0 );
                 $entityManager->persist($time);
                 
 

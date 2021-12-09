@@ -50,7 +50,7 @@ class PatientController extends AbstractController
 
 
         $timesRepo = $this->getDoctrine()->getRepository(Times::class);
-        $times = $timesRepo->findBy(['appointment_id'=>$appointment->getId() , 'status'=>0]);
+        $times = $timesRepo->findBy(['appointment_id'=>$appointment->getId()  , 'booked'=> 0 ]);
         
         $usersRepo = $this->getDoctrine()->getRepository(User::class);
         $doctor = $usersRepo->findOneBy(['id'=>$appointment->getUserId() ]);
@@ -83,8 +83,12 @@ class PatientController extends AbstractController
         $bookingEntity->setDoctorId($doctorId);
         $bookingEntity->setTime($time);
         $bookingEntity->setStatus(0);
+        $bookingEntity->setBooked(1);
         $bookingEntity->setConfirmation(0);
         $bookingEntity->setDate($date);
+
+        $queryTime = $this->getDoctrine()->getRepository( Times::class )->findBy(['appointment_id'=>$appointmentId ,  'time'=>$time]);
+        $queryTime[0]->setBooked(1);
 
         $entityManager->persist($bookingEntity);
         $entityManager->flush();

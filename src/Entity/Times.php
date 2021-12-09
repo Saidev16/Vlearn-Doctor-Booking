@@ -42,6 +42,11 @@ class Times
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $booked;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -112,6 +117,18 @@ class Times
     {
         $this->created_at= new \DateTime();
         $this->updated_at= new \DateTime();
+    }
+
+    public function getBooked(): ?int
+    {
+        return $this->booked;
+    }
+
+    public function setBooked(?int $booked): self
+    {
+        $this->booked = $booked;
+
+        return $this;
     }
 
 }

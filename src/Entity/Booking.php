@@ -57,6 +57,11 @@ class Booking
      */
     private $confirmation;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $booked;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -160,6 +165,18 @@ class Booking
     public function setConfirmation(?int $confirmation): self
     {
         $this->confirmation = $confirmation;
+
+        return $this;
+    }
+
+    public function getBooked(): ?int
+    {
+        return $this->booked;
+    }
+
+    public function setBooked(?int $booked): self
+    {
+        $this->booked = $booked;
 
         return $this;
     }
