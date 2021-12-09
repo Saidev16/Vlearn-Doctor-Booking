@@ -163,6 +163,13 @@ class AdminController extends AbstractController
         $booking->setConfirmation(1);
         $entityManager->flush();
 
+        $mailerService->send(
+            "you appointment is cancelled",
+            "doctor@gmail.com",
+            "patient@gmail.com",
+            "email/booking_confirmed.html.twig",
+            [ "time"=>$booking->getTime() , 'date'=> $booking->getDate()]
+        );
 
 
         if ($redirection == 1){
