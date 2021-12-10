@@ -1,10 +1,11 @@
 {% extends 'base_admin.html.twig' %}
 
 {% block body %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-11">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Réservations</div>
                 {% for message in app.flashes('NoBookingsfound') %}
@@ -38,6 +39,7 @@
                             <th scope="col">Heure</th>
                             <th scope="col">Confirmation</th>
                             <th scope="col">Statut</th>
+                            <th scope="col">Certificat</th>
                           </tr>
                           
                         </thead>
@@ -80,12 +82,40 @@
 
 
                                     </td>
+                                    <td>
+                                                <button class='btn btn-dark' id="cmd{{ booking.getId() }}" style='width:8rem;height:2.5rem'>generate PDF</button>
+                                                <div id="content{{ booking.getId() }}" style="display:none ;" >
+                                                    <h4 class='text-center' >CERTIFICAT MEDICAL </h4>
+                                                    <P>Je soussigne , DR exemple Atteste avoir examiné le : 2021/12/1 sur se demande, Mme/Mlle/M. : Titulaire du Passeport n: exemple ou/et de la Carte Nationale D'indentité Electronique n: </P>
+                                                </div>
+
+                                                    <script>
+
+                                                            var doc = new jsPDF();
+                                                            var specialElementHandlers = {
+                                                                '#editor': function (element, renderer) {
+                                                            return true;
+                                                            }
+                                                            };
+
+                                                            $('#cmd{{ booking.getId() }}').click(function () {
+                                                                doc.fromHTML($('#content{{ booking.getId() }}').html(), 15, 15, {
+                                                                    'width': 170,
+                                                                        'elementHandlers': specialElementHandlers
+                                                                });
+                                                                doc.save('patientCertificat');
+                                                            });
+
+                                                    </script>
+
+
+                                    </td>
                                 </tr>
                             {% endfor %}
                         {% else %}
                                 <td>Aucune Réservation disponible</td>
                         {% endif %}
-                          
+
                         </tbody>
                       </table>
                 </div>
@@ -93,6 +123,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>                                           
+
 
 {% endblock %}

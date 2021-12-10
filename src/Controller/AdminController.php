@@ -15,6 +15,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
+use Knp\Snappy\Pdf;
+
+
 
 
 
@@ -223,5 +229,52 @@ class AdminController extends AbstractController
     }
 
 
+    /**
+     * @Route("/admin/certificatMedicale" , name="certificat")
+     */
+    public function certificatMedicale(  )
+    {
+        
+        return $this->render('pdf/mypdf.html.twig' ,[
+            'headline'=>"headline"
+        ]);
+
+            // // Retrieve the HTML generated in our twig file
+            // $html = $this->renderView('pdf/mypdf.html.twig', [
+            //     'headline' => 'headline'
+            // ]);
+            // //Generate pdf with the retrieved HTML
+            // return new Response( $snappy->getOutputFromHtml($html), 200, array(
+            //     'Content-Type'          => 'application/pdf',
+            //     'Content-Disposition'   => 'inline; filename="export.pdf"'
+            // )
+            // );
+ 
+
+        // $options = new Options();
+        // $options->set('defaultFont', 'Roboto');
+
+
+       
+        // $dompdf = new Dompdf($options);
+        
+        // $data = array(
+        //     'headline' => 'my headline'
+        // );
+        // $html = $this->renderView('pdf/mypdf.html.twig', [
+        //     'headline' => "Test pdf generator"
+        // ]);
+        
+        
+        // $dompdf->loadHtml($html);
+        // $dompdf->setPaper('A4', 'portrait');
+        //  $dompdf->render();
+        //  $dompdf->stream("", [
+        //     "Attachment" => false
+        // ]);
+    
+
+
+    }
 
 }

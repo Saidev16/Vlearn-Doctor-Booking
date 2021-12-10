@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title of the PDF</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+
+    </head>
+    <body>
+        <div id="content" style='hidden' >
+            <h4>CERTIFICAT MEDICAL </h4>
+            <p>Je soussigné(e), _____________________________________________________,
+Docteur en Médecine, certifie avoir examiné
+Mr/Mme ____________________________________________________________
+Né(e) le ___________________________________
+et avoir constaté, ce jour, l’absence de signe clinique décelable contre-indiquant la
+pratique de la course à pied en compétition.
+Certificat fait pour servir et valoir ce que de droit sur la demande de l’intéressé et
+remis en mains propres le ________________________________________
+à ______________________________________  </p>
+        </div>
+        <div id="editor"></div>
+        <button id="cmd">generate PDF</button>
+
+    </body>
+    <script>
+
+        var doc = new jsPDF();
+        var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {
+    doc.fromHTML($('#content').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('{{ headline }}');
+});
+
+    </script>
+</html>
