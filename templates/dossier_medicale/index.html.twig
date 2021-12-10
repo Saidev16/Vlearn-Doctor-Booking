@@ -3,7 +3,7 @@
 {% block title %}Hello DossierMedicaleController!{% endblock %}
 
 {% block body %}
-<h1>Adding a new product</h1>
+<h1>Ajouter un document</h1>
 
 {{ form_start(form) }}
     {# ... #}
@@ -27,7 +27,7 @@
                     {% for document in documents %}
                         <tr>
                             <th scope="row">1</th>
-                            <td> document </td>
+                            <td> {{document.document}} </td>
                             <td> <a target='_blank' href="{{asset('uploads/dossierMedicale/'~ document.document )}}">Consulté</a> </td>
                         </tr>
                     {% endfor %}

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Booking;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Form\UserType;
 use App\Security\LoginFormAuthenticator;
 use App\services\MailerService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -233,42 +234,31 @@ class AdminController extends AbstractController
             'headline'=>"headline"
         ]);
 
-            // // Retrieve the HTML generated in our twig file
-            // $html = $this->renderView('pdf/mypdf.html.twig', [
-            //     'headline' => 'headline'
-            // ]);
-            // //Generate pdf with the retrieved HTML
-            // return new Response( $snappy->getOutputFromHtml($html), 200, array(
-            //     'Content-Type'          => 'application/pdf',
-            //     'Content-Disposition'   => 'inline; filename="export.pdf"'
-            // )
-            // );
- 
 
-        // $options = new Options();
-        // $options->set('defaultFont', 'Roboto');
+    }
+
+        /**
+     * @Route("/admin/profileEdit", name="profileEdit", methods={"GET", "POST"})
+    */
+    public function profileEdit(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $user = $repository->findOneBy(['id' => $this->getUser()->getId()]);
 
 
-       
-        // $dompdf = new Dompdf($options);
-        
-        // $data = array(
-        //     'headline' => 'my headline'
-        // );
-        // $html = $this->renderView('pdf/mypdf.html.twig', [
-        //     'headline' => "Test pdf generator"
-        // ]);
-        
-        
-        // $dompdf->loadHtml($html);
-        // $dompdf->setPaper('A4', 'portrait');
-        //  $dompdf->render();
-        //  $dompdf->stream("", [
-        //     "Attachment" => false
-        // ]);
-    
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
 
+            $entityManager->flush();
 
+            return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('user/edit.html.twig', [
+            'user' => $user,
+            'form' => $form->createView(),
+        ]);
     }
 
 }

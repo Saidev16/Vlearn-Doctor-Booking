@@ -40,7 +40,7 @@ class DossierMedicaleController extends AbstractController
     public function index($patient ,Request $request , EntityManagerInterface $em): Response
     {
         $repository = $this->getDoctrine()->getRepository(DossierMedicale::class);
-        $documents = $repository->findBy( ['user_id'=> $patient ] );
+        $documents = $repository->findBy( ['user_id'=> $patient ] , ['created_at'=>'DESC'] );
         
         $document = new DossierMedicale();
 
@@ -80,7 +80,7 @@ class DossierMedicaleController extends AbstractController
             $em->persist($document);
             $em->flush();
 
-            return $this->redirectToRoute('mes_patients');
+            return $this->redirectToRoute('dossier_medicale',['patient'=>$patient]);
         }
 
 

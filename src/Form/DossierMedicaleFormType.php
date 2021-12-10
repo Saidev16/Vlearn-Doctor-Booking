@@ -28,7 +28,7 @@ class DossierMedicaleFormType extends AbstractType
                             'application/x-pdf'
 
                         ],
-                        'mimeTypesMessage'=>'Please upload a valid PDF Document'
+                        'mimeTypesMessage'=>'Uniquement les fichier PDF sont autorisés'
                     ])
                 ]
             ])
