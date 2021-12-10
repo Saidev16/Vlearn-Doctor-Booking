@@ -1,0 +1,49 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Liste des patients{% endblock %}
+
+{% block body %}
+
+{% for message in app.flashes('NoBookingsfound') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+
+    <h1>Patients</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Telephone</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.Adress }}</td>
+                <td>{{ user.phoneNumber }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    
+                    <a style='color:white'  href="{{ path('dossier_medicale', {'patient': user.id}) }}"><button class="btn btn-primary">Voir</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">Aucun patient trouver</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+
+    
+{% endblock %}

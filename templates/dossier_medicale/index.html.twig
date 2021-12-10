@@ -1,0 +1,39 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Hello DossierMedicaleController!{% endblock %}
+
+{% block body %}
+<h1>Adding a new product</h1>
+
+{{ form_start(form) }}
+    {# ... #}
+
+{{ form_row(form.document) }}
+    {{ form_row(form.submit) }}
+{{ form_end(form) }}
+
+    <div>
+            
+                <h3>Les documents des patients </h3>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Document</th>
+                        <th scope="col">Consulter</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for document in documents %}
+                        <tr>
+                            <th scope="row">1</th>
+                            <td> document </td>
+                            <td> <a target='_blank' href="{{asset('uploads/dossierMedicale/'~ document.document )}}">Consulté</a> </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+    </div>
+
+{% endblock %}
