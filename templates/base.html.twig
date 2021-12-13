@@ -63,6 +63,9 @@
 								<li >
 									<a href='{{ path('clientPrescriptions') }}' >Mes prescriptions</a>
 								</li>
+								<li >
+									<a href='{{ path('dossier_medicale_patient') }}' >Mon dossier medicale</a>
+								</li>
 							{% endif %}
 							{% if is_granted('ROLE_DOCTOR') %}
 								<li >

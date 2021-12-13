@@ -69,6 +69,14 @@ class PrescriptionController extends AbstractController
         $prescription->setRetour($request->request->get('Retour'));
         $prescription->setBookingId($request->request->get('booking_id'));
 
+
+        // set prescription as sent :
+        $bookingRepo = $this->getDoctrine()->getRepository(Booking::class);
+        $booking = $bookingRepo->findOneBy([ 'id'=>$request->request->get('booking_id')]);
+        $booking->setPrescriptionSent(1);
+
+
+       $entityManager->persist($booking);
        $entityManager->persist($prescription);
        $entityManager->flush();
 

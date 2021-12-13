@@ -62,6 +62,11 @@ class Booking
      */
     private $booked;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $prescription_sent;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -177,6 +182,18 @@ class Booking
     public function setBooked(?int $booked): self
     {
         $this->booked = $booked;
+
+        return $this;
+    }
+
+    public function getPrescriptionSent(): ?int
+    {
+        return $this->prescription_sent;
+    }
+
+    public function setPrescriptionSent(?int $prescription_sent): self
+    {
+        $this->prescription_sent = $prescription_sent;
 
         return $this;
     }

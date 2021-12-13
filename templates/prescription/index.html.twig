@@ -46,8 +46,11 @@
                                             <button class="btn btn-success" style='width:7rem;'>visiter</button>
                                         {% endif %}
                                     </td>
-                                    <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{booking.id}}" data-whatever="@mdo">Prescription</button> </td>
-                                   
+                                    {% if booking.getPrescriptionSent() == 1 %}
+                                        <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{booking.id}}" data-whatever="@mdo">Prescription</button> </td>
+                                    {% else %}
+                                        <td> <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal{{booking.id}}" data-whatever="@mdo">Prescription</button> </td>
+                                    {% endif %}
                                     <div class="modal fade" id="exampleModal{{booking.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
