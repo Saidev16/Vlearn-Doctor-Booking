@@ -34,18 +34,12 @@
                             {% for booking in bookings %}
                                 <tr>
                                     <td>{{ booking.date }}</td>
-                                    <td>{{patient.username}}</td>
-                                    <td>{{ patient.email }}</td>
-                                    <td>{{ patient.phoneNumber }}</td>
-                                    <td>{{ patient.gender }}</td>
+                                    <td>{{patients[booking.id][booking.id].username}}</td>
+                                    <td>{{ patients[booking.id][booking.id].email }}</td>
+                                    <td>{{ patients[booking.id][booking.id].phoneNumber }}</td>
+                                    <td>{{ patients[booking.id][booking.id].gender }}</td>
                                     <td>{{booking.time}}</td>
                                     <td>
-                                        {# {% if booking.confirmation == 0 %}
-                                            <a href="{{ path('toggleConfirmation' , {booking : booking.id , redirection: 2 }) }}"> <button class="btn btn-warning" style='width:8rem;'>Not confirmed</button> </a> 
-                                         {% else %}
-                                            <a href="{{ path('toggleConfirmation' , {booking : booking.id , redirection: 2 }) }}"><button class="btn btn-success" style='width:8rem;'>Confirmed</button></a> 
-                                        {% endif %} #}
-
                                         <div class="btn-group">
                                             {% if booking.confirmation == 0 %}
                                                 <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='width:8rem;'>Pending</button>

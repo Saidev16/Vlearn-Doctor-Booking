@@ -14,17 +14,6 @@
                         </div>
                 {% endfor %}
 
-                    <form  action="{{path('adminBookings')}}" method='post' style='margin-left:3rem;' >
-
-                            <label for="start">Filtrer par date:</label>
-
-                             <input class='form-control' type="date" id="start" name="bookings_search"
-                                value="2021-12-01"
-                                min="2021-12-01" max="2031-12-31" style='width:13rem;'>
-                                <br>
-                             <button type="submit" class="btn btn-primary">recherche</button>    
-
-                    </form>
 
             {% if bookings is defined and bookings is not null %}
                 <div class="card-body">
@@ -45,13 +34,12 @@
                         </thead>
                         <tbody>
                             {% for booking in bookings %}
-
                                 <tr>
                                     <td>{{ booking.date }}</td>
-                                    <td>{{patients[booking.id][booking.id].username}}</td>
-                                    <td>{{ patients[booking.id][booking.id].email }}</td>
-                                    <td>{{ patients[booking.id][booking.id].phoneNumber }}</td>
-                                    <td>{{ patients[booking.id][booking.id].gender }}</td>
+                                    <td>{{patient.username}}</td>
+                                    <td>{{ patient.email }}</td>
+                                    <td>{{ patient.phoneNumber }}</td>
+                                    <td>{{ patient.gender }}</td>
                                     <td>{{booking.time}}</td>
                                     <td>
                                         <div class="btn-group">

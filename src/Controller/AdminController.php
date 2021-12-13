@@ -68,8 +68,15 @@ class AdminController extends AbstractController
         }
         
         if( $bookings){
-            $usersRepo = $this->getDoctrine()->getRepository(User::class);
-            $patient = $usersRepo->findOneBy([ 'id'=>$bookings[0]->getUserId() ]);
+            
+            foreach( $bookings as $booking ){
+                $usersRepo = $this->getDoctrine()->getRepository(User::class);
+                $patient = $usersRepo->findOneBy([ 'id'=>$booking->getUserId() ]);
+
+                $patients[$booking->getId()] = [$booking->getId() => $patient ];
+                
+            }
+            
         }else{
             $this->addFlash(
                 'NoBookingsfound',
@@ -80,11 +87,11 @@ class AdminController extends AbstractController
 
         }
         
-
+        // dd($patients);
 
 
         return $this->render('admin/bookings.html.twig' ,[
-            'patient'=>$patient,
+            'patients'=>$patients,
             'bookings'=>$bookings
         ]);
 
@@ -103,8 +110,13 @@ class AdminController extends AbstractController
         $bookings = $bookingRepo->findBy([ 'doctor_id'=>$this->getUser()->getId(), 'date'=>$todaysDate->format('Y-m-d') ] , ['created_at'=>'DESC']);
         
         if( $bookings){
-            $usersRepo = $this->getDoctrine()->getRepository(User::class);
-            $patient = $usersRepo->findOneBy([ 'id'=>$bookings[0]->getUserId() ]);
+            foreach( $bookings as $booking ){
+                $usersRepo = $this->getDoctrine()->getRepository(User::class);
+                $patient = $usersRepo->findOneBy([ 'id'=>$booking->getUserId() ]);
+
+                $patients[$booking->getId()] = [$booking->getId() => $patient ];
+                
+            }
         }else{
             $this->addFlash(
                 'NoBookingsfound',

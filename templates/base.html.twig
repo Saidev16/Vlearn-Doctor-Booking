@@ -54,16 +54,16 @@
 						</div>
 						<ul class="main-nav">
 							<li >
-								<a href="{{path('HomePage') }}">Home</a>
+								<a href="{{path('HomePage') }}">Accueil</a>
 							</li>
 							{% if is_granted('ROLE_PATIENT') %}
 								<li >
-									<a href='{{ path('myBookings') }}' >My bookings</a>
+									<a href='{{ path('myBookings') }}' >Mes réservations</a>
 								</li>
 							{% endif %}
 							{% if is_granted('ROLE_DOCTOR') %}
 								<li >
-									<a href='{{ path('user_index') }}' >Admin Access</a>
+									<a href='{{ path('user_index') }}' >Accés Admin</a>
 								</li>
 							{% endif %}
 							<li class="login-link">
