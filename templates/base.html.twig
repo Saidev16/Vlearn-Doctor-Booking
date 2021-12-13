@@ -60,6 +60,9 @@
 								<li >
 									<a href='{{ path('myBookings') }}' >Mes réservations</a>
 								</li>
+								<li >
+									<a href='{{ path('clientPrescriptions') }}' >Mes prescriptions</a>
+								</li>
 							{% endif %}
 							{% if is_granted('ROLE_DOCTOR') %}
 								<li >

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Booking;
+use App\Entity\Prescription;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -57,7 +58,43 @@ class PrescriptionController extends AbstractController
      */
     public function savePrescription( Request $request ,EntityManagerInterface $entityManager): Response
     {
-       dd( $request->request->getData );
+
+        $prescription = new Prescription();
+        $prescription->setMaladie($request->request->get('Maladie'));
+        $prescription->setSymptoms($request->request->get('Symptomes'));
+        $prescription->setMedicaments($request->request->get('Medicaments'));
+        $prescription->setTraitement($request->request->get('Traitement'));
+        $prescription->setUserId($request->request->get('user_id'));
+        $prescription->setDate($request->request->get('date'));
+        $prescription->setRetour($request->request->get('Retour'));
+        $prescription->setBookingId($request->request->get('booking_id'));
+
+       $entityManager->persist($prescription);
+       $entityManager->flush();
+
+       $this->addFlash(
+        'PrescriptionSent',
+        "La prescription est envoyé avec success"
+    );
+    
+
+       return $this->redirectToRoute('BookingsVisited');
+
+    }
+
+        /**
+     * @Route("/patient/clientPrescriptions", name="clientPrescriptions")
+     */
+    public function clientPrescriptions( EntityManagerInterface $entityManager): Response
+    {
+        $prescriptionRepo = $this->getDoctrine()->getRepository(Prescription::class);
+        $prescriptions = $prescriptionRepo->findBy([ 'user_id'=>$this->getUser()->getId() ] , ['created_at'=>'DESC']);
+
+
+
+        return $this->render('prescription/client_prescriptions.html.twig', ['prescriptions'=>$prescriptions] );
+
+
     }
 
 }

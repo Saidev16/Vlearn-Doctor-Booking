@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% block title %}EasyDoc{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">Mes Prescriptions </div>
+
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">date</th>
+                            <th scope="col">Maladie</th>
+                            <th scope="col">medicaments</th>
+                            <th scope="col">Afficher</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% if prescriptions %}
+                            {% for prescription in prescriptions %}
+                                <tr>
+                                    <td>{{prescription.date}}</td>
+                                    <td>{{prescription.maladie}}</td>
+                                    <td>{{prescription.medicaments}}</td>
+                                    <td>                             
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{prescription.id}}">
+                                            Afficher
+                                        </button> 
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal{{prescription.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Prescription Medicale</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h4>Date de visite : </h4> <p>{{prescription.date}}</p>  
+                                                <h4>Maladie : </h4> <p>{{prescription.maladie}} </p>
+                                                <h4>Symptoms : </h4> <p> {{prescription.symptoms}}</p> 
+                                                <h4>Medicaments : </h4> <p>{{prescription.medicaments}}</p> 
+                                                <h4>Traitmenet a suivre : </h4> <p>{{prescription.traitement}} </p> 
+                                                <h4>Retour Du Medecin : </h4> <p>{{prescription.retour}}</p> 
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                                <td>Aucune Prescription disponible</td>
+                        {% endif %}
+                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
