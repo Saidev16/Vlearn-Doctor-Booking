@@ -57,6 +57,11 @@ class Prescription
      */
     private $created_at;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $booking_id;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,6 +159,18 @@ class Prescription
     public function setCreatedAt(?\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getBookingId(): ?int
+    {
+        return $this->booking_id;
+    }
+
+    public function setBookingId(?int $booking_id): self
+    {
+        $this->booking_id = $booking_id;
 
         return $this;
     }

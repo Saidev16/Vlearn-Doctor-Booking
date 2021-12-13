@@ -1,19 +1,18 @@
 {% extends 'base_admin.html.twig' %}
 
 {% block body %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-11">
             <div class="card">
                 <div class="card-header">Réservations</div>
-                {% for message in app.flashes('NoBookingsfound') %}
+
+                    {% for message in app.flashes('NoBookingsfound') %}
                         <div class="alert alert-danger">
                             {{ message }}
                         </div>
-                {% endfor %}
-
+                    {% endfor %}
 
             {% if bookings is defined and bookings is not null %}
                 <div class="card-body">
@@ -21,14 +20,13 @@
                         <thead>
                           <tr>
                             <th scope="col">Date</th>
-                            <th scope="col">patient</th>
+                            <th scope="col">Patient</th>
                             <th scope="col">Email</th>
                             <th scope="col">Telephone</th>
                             <th scope="col">Sexe</th>
                             <th scope="col">Heure</th>
-                            <th scope="col">Confirmation</th>
                             <th scope="col">Statut</th>
-                            <th scope="col">Certificat</th>
+                            <th scope="col">Precription</th>
                           </tr>
                           
                         </thead>
@@ -36,70 +34,71 @@
                             {% for booking in bookings %}
                                 <tr>
                                     <td>{{ booking.date }}</td>
-                                    <td>{{patient.username}}</td>
-                                    <td>{{ patient.email }}</td>
-                                    <td>{{ patient.phoneNumber }}</td>
-                                    <td>{{ patient.gender }}</td>
+                                    <td>{{patients[booking.id][booking.id].username}}</td>
+                                    <td>{{ patients[booking.id][booking.id].email }}</td>
+                                    <td>{{ patients[booking.id][booking.id].phoneNumber }}</td>
+                                    <td>{{ patients[booking.id][booking.id].gender }}</td>
                                     <td>{{booking.time}}</td>
                                     <td>
-                                        <div class="btn-group">
-                                            {% if booking.confirmation == 0 %}
-                                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='width:8rem;'>Pending</button>
-                                            {% elseif booking.confirmation == 1 %}
-                                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='width:8rem;'>Confirmed</button>
-                                            {% else %}
-                                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='width:8rem;'>Cancelled</button>
-                                            {% endif %}
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ path('confirmBooking' , {booking : booking.id}) }}">Confirm</a>
-                                                    <a class="dropdown-item" href="{{ path('cancelBooking' , {booking : booking.id}) }}">Cancel</a>
-                                                </div>
-									    </div>
-
-                                    </td>
-                                    <td>
                                         {% if booking.status == 0 %}
-                                            <a href="{{ path('toggleVisited' , {booking : booking.id}) }}"> <button class="btn btn-primary" style='width:7rem;'>Not visited</button> </a> 
+                                             <button class="btn btn-primary" style='width:7rem;'>non visiter</button>
                                          {% else %}
-                                            <a href="{{ path('toggleVisited' , {booking : booking.id}) }}"><button class="btn btn-success" style='width:7rem;'>Visited</button></a> 
+                                            <button class="btn btn-success" style='width:7rem;'>visiter</button>
                                         {% endif %}
-
-
                                     </td>
-                                    <td>
-                                                <button class='btn btn-dark' id="cmd{{ booking.getId() }}" style='width:8rem;height:2.5rem'>generate PDF</button>
-                                                <div id="content{{ booking.getId() }}" style="display:none ;" >
-                                                    <h4 class='text-center' >CERTIFICAT MEDICAL </h4>
-                                                    <P>Je soussigne , DR exemple Atteste avoir examiné le : 2021/12/1 sur se demande, Mme/Mlle/M. : Titulaire du Passeport n: exemple ou/et de la Carte Nationale D'indentité Electronique n: </P>
+                                    <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{booking.id}}" data-whatever="@mdo">Prescription</button> </td>
+                                   
+                                    <div class="modal fade" id="exampleModal{{booking.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">prescription médicale</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
                                                 </div>
+                                                <div class="modal-body">
+                                                <form action="{{ path('savePrescription') }}" method='POST' >
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="col-form-label">Maladie</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name='Maladie'>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="col-form-label">Symptomes:</label>
+                                                        <input class="form-control" id="message-text" name='Symptomes'></input>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="col-form-label">Medicaments:</label>
+                                                        <input class="form-control" id="message-text" name='Medicaments'></input>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="col-form-label">Traitement:</label>
+                                                        <input class="form-control" id="message-text" name='Traitement'></input>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="col-form-label">Retour du Medecin:</label>
+                                                        <input class="form-control" id="message-text" name='Retour'></input>
+                                                    </div>
+                                                    <input type="hidden" name='user_id' value="{{patients[booking.id][booking.id].id}}" >
+                                                    <input type="hidden" name='date' value="{{ booking.date }}" >
+                                                    <input type="hidden" name='booking_id' value="{{ booking.date }}" >
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Enregister</button> 
+                                                        </div>
+                                                </form>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                                    <script>
-
-                                                            var doc = new jsPDF();
-                                                            var specialElementHandlers = {
-                                                                '#editor': function (element, renderer) {
-                                                            return true;
-                                                            }
-                                                            };
-
-                                                            $('#cmd{{ booking.getId() }}').click(function () {
-                                                                doc.fromHTML($('#content{{ booking.getId() }}').html(), 15, 15, {
-                                                                    'width': 170,
-                                                                        'elementHandlers': specialElementHandlers
-                                                                });
-                                                                doc.save('patientCertificat');
-                                                            });
-
-                                                    </script>
-
-
-                                    </td>
+                                
                                 </tr>
                             {% endfor %}
                         {% else %}
                                 <td>Aucune Réservation disponible</td>
                         {% endif %}
-
+                          
                         </tbody>
                       </table>
                 </div>
@@ -107,7 +106,9 @@
             </div>
         </div>
     </div>
-</div>                                           
+</div>
+
+
 
 
 {% endblock %}

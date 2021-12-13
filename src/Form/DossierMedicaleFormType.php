@@ -17,6 +17,7 @@ class DossierMedicaleFormType extends AbstractType
     {
         $builder
             ->add('document', FileType::class, [
+                'attr'=>['class'=>'form-control'],
                 'label'=> "Document (PDF File) ",
                 'mapped'=> false,
                 "required"=> false,

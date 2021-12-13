@@ -83,11 +83,10 @@ class AdminController extends AbstractController
                 'Aucune Réservations Trouver'
             );
     
-            return $this->redirectToRoute('user_index');
+            return $this->redirectToRoute('adminBookings');
 
         }
         
-        // dd($patients);
 
 
         return $this->render('admin/bookings.html.twig' ,[
@@ -131,7 +130,7 @@ class AdminController extends AbstractController
 
 
         return $this->render('admin/today_bookings.html.twig' ,[
-            'patient'=>$patient,
+            'patients'=>$patients,
             'bookings'=>$bookings
         ]);
 
