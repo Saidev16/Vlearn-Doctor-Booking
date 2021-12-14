@@ -120,13 +120,20 @@
 									<li><a href="{{path('mes_patients')}}">Ajouter les documents</a></li>
 								</ul>
 							</li>
+
+							<li> 
+								<a href="{{path('docAdmin')}}"><i class="fe fe-document"></i> <span>Ajouter un document</span></a>
+							</li>
+
 							<li class="submenu">
 								<a href="#"><i class="fe fe-document"></i> <span>Mes Documents</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="{{path('mes_patients')}}">Ajouter les documents</a></li>
+									<li><a href="{{path('docTypes' , {'type' : 'Dossierdupersonnel'} )}}">Dossier du personnel</a></li>
+									<li><a href="{{path('docTypes', {'type' : 'Factures'})}}">Factures</a></li>
+									<li><a href="{{path('docTypes', {'type' : 'Cheques'})}}">Chéques</a></li>
+									<li><a href="{{path('docTypes', {'type' : 'Autres'})}}">Autres</a></li>
 								</ul>
 							</li>
-
 
 
 						</ul>

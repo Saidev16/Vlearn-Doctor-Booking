@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\DossierMedicale;
 use App\Form\DossierMedicaleFormType;
+use App\Form\MyDocsType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -74,6 +75,12 @@ class DossierMedicaleController extends AbstractController
                 // instead of its contents
                 $document->setDocument($newFilename);
                 $document->setUserId($patient);
+                $document->setType( 'Document du Patient' );
+                if( $form->get('commentaire')->getData()  ){
+
+                    $document->setCommentaire( $form->get('commentaire')->getData() );
+                }
+
             }
 
             // ... persist the $product variable or any other work
@@ -132,6 +139,7 @@ class DossierMedicaleController extends AbstractController
                 // instead of its contents
                 $document->setDocument($newFilename);
                 $document->setUserId($this->getUser()->getId());
+                
             }
 
             // ... persist the $product variable or any other work
@@ -143,7 +151,7 @@ class DossierMedicaleController extends AbstractController
 
 
 
-        return $this->render('dossier_medicale/index.html.twig', [
+        return $this->render('dossier_medicale/dossierpatient.html.twig', [
             'form' => $form->createView(),
             'documents'=>$documents
         ]);
@@ -162,7 +170,7 @@ class DossierMedicaleController extends AbstractController
         
         $document = new DossierMedicale();
 
-        $form = $this->createForm( DossierMedicaleFormType::class, $document );
+        $form = $this->createForm( MyDocsType::class, $document );
 
         $form->handleRequest($request);
 
@@ -191,7 +199,14 @@ class DossierMedicaleController extends AbstractController
                 // updates the 'brochureFilename' property to store the PDF file name
                 // instead of its contents
                 $document->setDocument($newFilename);
-                $document->setUserId($patient);
+                
+                $document->setUserId($this->getUser()->getId());
+                if( $form->get('commentaire')->getData()  ){
+                         $document->setCommentaire( $form->get('commentaire')->getData() );
+                }
+                if( $form->get('Type')->getData() ){
+                    $document->setType( $form->get('Type')->getData() );
+                }
             }
 
             // ... persist the $product variable or any other work
@@ -205,6 +220,24 @@ class DossierMedicaleController extends AbstractController
 
         return $this->render('dossier_medicale/index.html.twig', [
             'form' => $form->createView(),
+            'documents'=>$documents
+        ]);
+    }
+
+
+
+
+    /**
+     * @Route("admin/mesdoc/{type}", defaults={"type"=null} , name="docTypes")
+     */
+    public function docTypes($type): Response
+    {
+        $repository = $this->getDoctrine()->getRepository(DossierMedicale::class);
+        $documents = $repository->findBy( ['user_id'=> $this->getUser()->getId() , 'type'=>$type ] , ['created_at'=>'DESC'] );
+        
+
+
+        return $this->render('dossier_medicale/mesDocs.html.twig', [
             'documents'=>$documents
         ]);
     }
