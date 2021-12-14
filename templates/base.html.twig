@@ -69,8 +69,12 @@
 							{% endif %}
 							{% if is_granted('ROLE_DOCTOR') %}
 								<li >
-									<a href='{{ path('user_index') }}' >Accés Admin</a>
+									<a href='{{ path('user_index') }}' >E-RDV</a>
 								</li>
+								<li >
+									<a href='{{ path('mes_patients') }}' >E-DOC</a>
+								</li>
+
 							{% endif %}
 							<li class="login-link">
 								<a >Login / Signup</a>

@@ -18,18 +18,29 @@ class DossierMedicaleFormType extends AbstractType
         $builder
             ->add('document', FileType::class, [
                 'attr'=>['class'=>'form-control'],
-                'label'=> "Document (PDF File) ",
+                'label'=> "Document",
                 'mapped'=> false,
                 "required"=> false,
                 'constraints'=>[
                     new File([
-                        'maxSize'=>'1024k',
+                        'maxSize'=>'2048k',
                         'mimeTypes'=>[
                             'application/pdf',
-                            'application/x-pdf'
+                            'application/x-pdf',
+                            "image/png",
+                            "image/jpeg",
+                            "image/jpg",
+                            'application/msword',
+                            'application/vnd.ms-excel',
+                            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                            'application/vnd.ms-excel',
+                            'application/octet-stream',
+                            'text/csv',
+                             'text/plain',
+                             'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
 
                         ],
-                        'mimeTypesMessage'=>'Uniquement les fichier PDF sont autorisés'
+                        'mimeTypesMessage'=>'Format non autorisés'
                     ])
                 ]
             ])

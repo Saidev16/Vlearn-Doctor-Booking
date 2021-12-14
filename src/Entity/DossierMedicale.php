@@ -32,6 +32,16 @@ class DossierMedicale
      */
     private $created_at;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $type;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $commentaire;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -77,6 +87,30 @@ class DossierMedicale
     public function __construct()
     {
         $this->created_at= new \DateTime();
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getCommentaire(): ?string
+    {
+        return $this->commentaire;
+    }
+
+    public function setCommentaire(?string $commentaire): self
+    {
+        $this->commentaire = $commentaire;
+
+        return $this;
     }
 
 }
