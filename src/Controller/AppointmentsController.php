@@ -57,29 +57,36 @@ class AppointmentsController extends AbstractController
             ]);
 
             }
+        
+            $selectedDate = $this->session->get('appointment_date');
             
-
-            $appointment = new Appointments;
-            $appointment->setUserId( $this->getUser()->getId() );
-            $appointment->setDate( $this->session->get('appointment_date') ) ;
-            $entityManager->persist($appointment);
-            $entityManager->flush();
-
-            //set times 
-            $times = $request->request->get('time');
-
-            foreach( $times as $timedata ){
-                $time = new Times;
-                $time->setAppointmentId( $appointment->getId() );
-                $time->setTime( $timedata );
-                $time->setStatus( 0 );
-                $time->setBooked( 0 );
-                $entityManager->persist($time);
+            for ($i = 0; $i <= 30; $i++) {
                 
-
-
+                $appointment = new Appointments;
+                $appointment->setUserId( $this->getUser()->getId() );
+                $appointment->setDate( $selectedDate ) ;
+                $entityManager->persist($appointment);
+                $entityManager->flush();
+                
+                $selectedDate = date('Y-m-d', strtotime($selectedDate . ' +1 day'));
+                //set times 
+                $times = $request->request->get('time');
+    
+                foreach( $times as $timedata ){
+                    $time = new Times;
+                    $time->setAppointmentId( $appointment->getId() );
+                    $time->setTime( $timedata );
+                    $time->setStatus( 0 );
+                    $time->setBooked( 0 );
+                    $entityManager->persist($time);
+                    
+    
+    
+                }
+    
+    
             }
-
+              
 
             $entityManager->flush();
 

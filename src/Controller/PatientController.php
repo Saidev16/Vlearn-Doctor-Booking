@@ -6,6 +6,7 @@ use App\Entity\Appointments;
 use App\Entity\Booking;
 use App\Entity\Times;
 use App\Entity\User;
+use App\services\MailerService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,6 +36,7 @@ class PatientController extends AbstractController
      */
     public function booking( Request $request , $date): Response
     {
+        
         
         $appointmentRepo = $this->getDoctrine()->getRepository(Appointments::class);
         $appointment = $appointmentRepo->findOneBy(['date'=>$date]);
@@ -66,7 +68,7 @@ class PatientController extends AbstractController
     /**
      * @Route("patient/storeBooking", name="store_booking")
      */
-    public function storeBooking( Request $request , EntityManagerInterface $entityManager ): Response
+    public function storeBooking( Request $request , EntityManagerInterface $entityManager ,MailerService $mailerService ): Response
     {
         $time = $request->request->get('time');
         $date = $request->request->get('date');
@@ -88,6 +90,18 @@ class PatientController extends AbstractController
 
         $queryTime = $this->getDoctrine()->getRepository( Times::class )->findBy(['appointment_id'=>$appointmentId ,  'time'=>$time]);
         $queryTime[0]->setBooked(1);
+
+
+        $doctor = $this->getDoctrine()->getRepository( User::class )->findOneBy(['id'=>$doctorId ]);
+
+        $mailerService->send(
+            "Vous avez une nouvelle Réservation",
+            "ounsa@piimt.us",
+            $doctor->getEmail(),
+
+            "email/new_booking.html.twig",
+            [ "time"=>$time , 'date'=> $date]
+        );
 
         $entityManager->persist($bookingEntity);
         $entityManager->flush();
