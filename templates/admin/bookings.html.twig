@@ -27,7 +27,7 @@
                     </form>
 
             {% if bookings is defined and bookings is not null %}
-                <div class="card-body">
+                <div class="card-body col-md-12">
                     <table class="table">
                         <thead>
                           <tr>
@@ -35,11 +35,11 @@
                             <th scope="col">patient</th>
                             <th scope="col">Email</th>
                             <th scope="col">Telephone</th>
-                            <th scope="col">Sexe</th>
                             <th scope="col">Heure</th>
                             <th scope="col">Confirmation</th>
                             <th scope="col">Statut</th>
                             <th scope="col">Certificat</th>
+                            <th scope="col">Motif</th>
                           </tr>
                           
                         </thead>
@@ -51,7 +51,6 @@
                                     <td>{{patients[booking.id][booking.id].username}}</td>
                                     <td>{{ patients[booking.id][booking.id].email }}</td>
                                     <td>{{ patients[booking.id][booking.id].phoneNumber }}</td>
-                                    <td>{{ patients[booking.id][booking.id].gender }}</td>
                                     <td>{{booking.time}}</td>
                                     <td>
                                         <div class="btn-group">
@@ -106,6 +105,33 @@
 
 
                                     </td>
+                                    <td> <button class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal{{booking.id}}"> motif </button> </td>
+                                        <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal{{booking.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Motif de consultation</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {% if booking.motif is not null %}
+                                                        {{booking.motif}}
+                                                    {% else %}
+                                                        Aucun motif pour cette consultation
+                                                    {% endif %}
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+
                                 </tr>
                             {% endfor %}
                         {% else %}

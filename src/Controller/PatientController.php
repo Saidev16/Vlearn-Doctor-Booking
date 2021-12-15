@@ -13,9 +13,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
+
 
 class PatientController extends AbstractController
 {
+
+
+    private $client;
+
+    public function __construct(HttpClientInterface $client)
+    {
+        $this->client = $client;
+    }
+
+
     /**
      * @Route("/bookingSearch", name="search_booking")
      */
@@ -36,7 +48,7 @@ class PatientController extends AbstractController
      */
     public function booking( Request $request , $date): Response
     {
-        
+
         
         $appointmentRepo = $this->getDoctrine()->getRepository(Appointments::class);
         $appointment = $appointmentRepo->findOneBy(['date'=>$date]);
@@ -88,6 +100,10 @@ class PatientController extends AbstractController
         $bookingEntity->setConfirmation(0);
         $bookingEntity->setDate($date);
 
+        if( $request->request->get('motif') ){
+            $bookingEntity->setMotif( $request->request->get('motif') );
+        }
+
         $queryTime = $this->getDoctrine()->getRepository( Times::class )->findBy(['appointment_id'=>$appointmentId ,  'time'=>$time]);
         $queryTime[0]->setBooked(1);
 
@@ -102,6 +118,14 @@ class PatientController extends AbstractController
             "email/new_booking.html.twig",
             [ "time"=>$time , 'date'=> $date]
         );
+
+        // send SMS 
+
+        $this->client->request(
+            'GET',
+            "https://platform.clickatell.com/messages/http/send?apiKey=JQHZLSAJSWKfkYChmuZNjg==&to=+212762379479&content=Vous avez une nouvelle reservation pour le ". $date . " a ". $time
+        );
+
 
         $entityManager->persist($bookingEntity);
         $entityManager->flush();

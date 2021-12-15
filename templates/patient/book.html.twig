@@ -53,6 +53,10 @@
                         </div>
                         <div class="card-footer mt-3">
                         {% if app.user %}
+                        <div class="form-group">
+                            <label for=""> Motif de consultation </label>
+                            <input type="text" class='form-control' name='motif'  >
+                        </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%;">Réserver cette heure</button>
                         {% else %}
                             <h5>Veuillez se connecter pour réserver un rendez-vous</h5>
