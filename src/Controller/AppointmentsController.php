@@ -54,6 +54,8 @@ class AppointmentsController extends AbstractController
     
             return $this->render('appointments/create.html.twig', [
                 'setted_date' => $this->session->get('appointment_date'),
+                'to_setted_date'=> date('Y-m-d', strtotime( $this->session->get('appointment_date') . ' +30 day')),
+
             ]);
 
             }
@@ -99,13 +101,15 @@ class AppointmentsController extends AbstractController
     
             return $this->render('appointments/create.html.twig', [
                 'setted_date' => $this->session->get('appointment_date'),
+                'to_setted_date'=> date('Y-m-d', strtotime( $this->session->get('appointment_date') . ' +30 day')),
             ]);
     
             
         }
-        
         return $this->render('appointments/create.html.twig', [
             'setted_date' => $this->session->get('appointment_date'),
+            'to_setted_date'=> date('Y-m-d', strtotime( $this->session->get('appointment_date') . ' +30 day')),
+
         ]);
     }
 

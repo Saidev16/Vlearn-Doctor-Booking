@@ -67,6 +67,11 @@ class Booking
      */
     private $prescription_sent;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $motif;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -194,6 +199,18 @@ class Booking
     public function setPrescriptionSent(?int $prescription_sent): self
     {
         $this->prescription_sent = $prescription_sent;
+
+        return $this;
+    }
+
+    public function getMotif(): ?string
+    {
+        return $this->motif;
+    }
+
+    public function setMotif(?string $motif): self
+    {
+        $this->motif = $motif;
 
         return $this;
     }

@@ -17,7 +17,7 @@ class PrescriptionController extends AbstractController
     /**
      * @Route("/admin/bookings/visited", name="BookingsVisited")
      */
-    public function adminBookings( EntityManagerInterface $entityManager): Response
+    public function adminBookings( ): Response
     {
 
         

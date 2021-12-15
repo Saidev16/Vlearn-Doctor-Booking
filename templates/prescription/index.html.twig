@@ -2,6 +2,9 @@
 
 {% block body %}
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src='http://html2canvas.hertzen.com/dist/html2canvas.min.js' ></script>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-11">
@@ -64,30 +67,93 @@
                                                 <form action="{{ path('savePrescription') }}" method='POST' >
                                                     <div class="form-group">
                                                         <label for="recipient-name" class="col-form-label">Maladie</label>
-                                                        <input type="text" class="form-control" id="recipient-name" name='Maladie'required>
+                                                        <input type="text" class="form-control elements{{ booking.getId() }}" id="Maladie{{ booking.getId() }}" name='Maladie'required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="message-text" class="col-form-label">Symptomes:</label>
-                                                        <input class="form-control" id="message-text" name='Symptomes'required></input>
+                                                        <input class="form-control elements{{ booking.getId() }}" id="Symptomes{{ booking.getId() }}" name='Symptomes'required></input>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="message-text" class="col-form-label">Medicaments:</label>
-                                                        <input class="form-control" id="message-text" name='Medicaments'required></input>
+                                                        <input class="form-control elements{{ booking.getId() }}" id="Medicaments{{ booking.getId() }}" name='Medicaments'required></input>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="message-text" class="col-form-label">Traitement:</label>
-                                                        <input class="form-control" id="message-text" name='Traitement'required></input>
+                                                        <input class="form-control elements{{ booking.getId() }}" id="Traitement{{ booking.getId() }}" name='Traitement'required></input>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="message-text" class="col-form-label">Retour du Medecin:</label>
-                                                        <input class="form-control" id="message-text" name='Retour'required></input>
+                                                        <input class="form-control elements{{ booking.getId() }}" id="Retour{{ booking.getId() }}" name='Retour'required></input>
                                                     </div>
                                                     <input type="hidden" name='user_id' value="{{patients[booking.id][booking.id].id}}" >
-                                                    <input type="hidden" name='date' value="{{ booking.date }}" >
+                                                    <input type="hidden" name='date' value="{{ booking.date }}" id='{{ booking.date }}' >
                                                     <input type="hidden" name='booking_id' value="{{ booking.id }}" >
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                             <button type="submit" class="btn btn-primary">Enregister</button> 
+                                                            <button class='btn btn-dark' id="cmd{{ booking.getId() }}" style='width:8rem;height:2.5rem'>générer PDF</button>
+                                                            <div id="content{{ booking.getId() }}" style="display:none ;" >
+                                                                    <div class="container">
+                                                                        <div class="row">
+                                                                            <div class="col-md-8">
+                                                                               	<h1 class='text-center pdfTitle' style="color:black;  " >Prescription </h1>
+                                                                            
+                                                                                <h4>Maladie : </h4>  <span id='prescMaladie{{ booking.getId() }}' ></span> <br>
+                                                                                <h4>Medicament : </h4>  <span id='prescMedicaments{{ booking.getId() }}'></span> <br>
+                                                                                <h4>Symptomes : </h4>  <span id='prescSymptomes{{ booking.getId() }}'></span> <br>
+                                                                                <h4>Traitement : </h4>  <span id='prescTraitement{{ booking.getId() }}'></span> <br>
+                                                                                <h4>Retour : </h4>  <span id='prescRetour{{ booking.getId() }}'></span> <br>                                                                            
+                                                                            </div>
+                                                                        
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    
+                                                            </div>
+
+
+                                                    <script>
+
+                                                            var doc = new jsPDF();
+                                                            var specialElementHandlers = {
+                                                                '#editor': function (element, renderer) {
+                                                            return true;
+                                                            }
+                                                            };
+
+                                                            $('#cmd{{ booking.getId() }}').click(function () {
+                                                                doc.fromHTML($('#content{{ booking.getId() }}').html(), 15, 15, {
+                                                                    'width': 170,
+                                                                        'elementHandlers': specialElementHandlers
+                                                                });
+                                                                doc.save('Prescription');
+                                                            });
+
+                                                                $('.elements{{ booking.getId() }}').keyup(function(){
+
+                                                                        // if you want, you may use [ $().change() ] instead of [ $().keyup() ]
+
+                                                                        var Maladie = $('#Maladie{{ booking.getId() }}').val();
+                                                                        var Symptomes= $('#Symptomes{{ booking.getId() }}').val();
+                                                                        var Medicaments = $('#Medicaments{{ booking.getId() }}').val();
+                                                                        var Traitement = $('#Traitement{{ booking.getId() }}').val();
+                                                                        var Retour = $('#Retour{{ booking.getId() }}').val();
+                                                                        
+                                                                        $('#prescMedicaments{{ booking.getId() }}').text(Medicaments);
+                                                                        $('#prescMaladie{{ booking.getId() }}').text(Maladie);
+                                                                        $('#prescSymptomes{{ booking.getId() }}').text(Symptomes);
+                                                                        $('#prescTraitement{{ booking.getId() }}').text(Traitement);
+                                                                        $('#prescRetour{{ booking.getId() }}').text(Retour);
+
+
+                                                                });
+
+
+                                                    </script>
+
+
+
                                                         </div>
                                                 </form>
                                                 </div>
