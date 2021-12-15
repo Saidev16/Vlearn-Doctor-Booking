@@ -7,6 +7,7 @@ use App\Entity\Booking;
 use App\Entity\Times;
 use App\Entity\User;
 use App\services\MailerService;
+use App\services\SmsService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -80,7 +81,7 @@ class PatientController extends AbstractController
     /**
      * @Route("patient/storeBooking", name="store_booking")
      */
-    public function storeBooking( Request $request , EntityManagerInterface $entityManager ,MailerService $mailerService ): Response
+    public function storeBooking( Request $request, SmsService $sms , EntityManagerInterface $entityManager ,MailerService $mailerService ): Response
     {
         $time = $request->request->get('time');
         $date = $request->request->get('date');
@@ -119,13 +120,9 @@ class PatientController extends AbstractController
             [ "time"=>$time , 'date'=> $date]
         );
 
-        // send SMS 
-
-        $this->client->request(
-            'GET',
-            "https://platform.clickatell.com/messages/http/send?apiKey=JQHZLSAJSWKfkYChmuZNjg==&to=+212762379479&content=Vous avez une nouvelle reservation pour le ". $date . " a ". $time
-        );
-
+        
+        $smsContent = 'Vous avez une nouvelle reservation pour le '. $date . ' a '. $time ;
+        $sms->send('+212762379479',$smsContent );
 
         $entityManager->persist($bookingEntity);
         $entityManager->flush();

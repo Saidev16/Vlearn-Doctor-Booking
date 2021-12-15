@@ -8,6 +8,7 @@ use App\Form\RegistrationFormType;
 use App\Form\UserType;
 use App\Security\LoginFormAuthenticator;
 use App\services\MailerService;
+use App\services\SmsService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -168,7 +169,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/confirmBooking/{booking}/{redirection}",defaults={"redirection"=1}, name="confirmBooking")
      */
-    public function confirmBooking($booking , $redirection , EntityManagerInterface $entityManager , MailerService $mailerService ): Response
+    public function confirmBooking($booking , SmsService $sms , $redirection , EntityManagerInterface $entityManager , MailerService $mailerService ): Response
     {
         $bookingRepo = $this->getDoctrine()->getRepository(Booking::class);
         $booking = $bookingRepo->find($booking);
@@ -189,6 +190,9 @@ class AdminController extends AbstractController
             [ "time"=>$booking->getTime() , 'date'=> $booking->getDate()]
         );
 
+        $smsContent = 'Votre consultation pour le  '. $booking->getDate() . ' a '. $booking->getTime() . ' est confirmer par le docteur ' ;
+        $sms->send('+212762379479',$smsContent );
+
 
         if ($redirection == 1){
 
@@ -203,7 +207,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/cancelBooking/{booking}/{redirection}",defaults={"redirection"=1}, name="cancelBooking")
      */
-    public function cancelBooking($booking , $redirection , EntityManagerInterface $entityManager , MailerService $mailerService): Response
+    public function cancelBooking($booking , SmsService $sms , $redirection , EntityManagerInterface $entityManager , MailerService $mailerService): Response
     {
         $bookingRepo = $this->getDoctrine()->getRepository(Booking::class);
         $booking = $bookingRepo->find($booking);
@@ -222,6 +226,10 @@ class AdminController extends AbstractController
             "email/booking_cancelled.html.twig",
             [ "time"=>$booking->getTime() , 'date'=> $booking->getDate()]
         );
+
+        $smsContent = 'Votre consultation pour le  '. $booking->getDate() . ' a '. $booking->getTime() . ' est annule par le docteur ' ;
+        $sms->send('+212762379479',$smsContent );
+
 
 
         if ($redirection == 1){
