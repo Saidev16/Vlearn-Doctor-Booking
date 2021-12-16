@@ -36,7 +36,7 @@
 
                         {% if app.user %}
                             <div class="mb-3">
-                                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
                             </div>
                         {% endif %}
 							
@@ -48,7 +48,7 @@
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
-											<h3>Login <span>EasyDoc</span></h3>
+											<h3>Connexion <span>EasyDoc</span></h3>
 										</div>
 										<form method='post'>
 											<div class="form-group form-focus">
@@ -57,17 +57,17 @@
 											</div>
 											<div class="form-group form-focus">
 												<input name="password" id='inputPassword' autocomplete='email' required type="password" class="form-control floating">
-												<label class="focus-label">Password</label>
+												<label class="focus-label">Mot de passe</label>
 											</div>
 											<div class="text-right">
-												<a class="forgot-link" href="">Forgot Password ?</a>
+												<a class="forgot-link" href="">Mot de passe oublié ?</a>
 											</div>
-											<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Login</button>
+											<button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Connexion</button>
 											<div class="login-or">
 												<span class="or-line"></span>
 												<span class="span-or">or</span>
 											</div>
-											<div class="text-center dont-have">Don’t have an account? <a href="{{ path('app_register') }}">Register</a></div>
+											<div class="text-center dont-have">Vous avez pas un compte ? <a href="{{ path('app_register') }}">Register</a></div>
 										
                                                 <input type="hidden" name="_csrf_token"
                                                         value="{{ csrf_token('authenticate') }}"
