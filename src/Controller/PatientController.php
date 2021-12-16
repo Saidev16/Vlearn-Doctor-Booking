@@ -122,7 +122,7 @@ class PatientController extends AbstractController
 
         
         $smsContent = 'Vous avez une nouvelle reservation pour le '. $date . ' a '. $time ;
-        $sms->send('+212762379479',$smsContent );
+        $sms->send('+212668535370',$smsContent );
 
         $entityManager->persist($bookingEntity);
         $entityManager->flush();

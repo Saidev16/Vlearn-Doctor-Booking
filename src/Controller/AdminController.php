@@ -191,7 +191,7 @@ class AdminController extends AbstractController
         );
 
         $smsContent = 'Votre consultation pour le  '. $booking->getDate() . ' a '. $booking->getTime() . ' est confirmer par le docteur ' ;
-        $sms->send('+212762379479',$smsContent );
+        $sms->send('+212668535370',$smsContent );
 
 
         if ($redirection == 1){
@@ -228,7 +228,7 @@ class AdminController extends AbstractController
         );
 
         $smsContent = 'Votre consultation pour le  '. $booking->getDate() . ' a '. $booking->getTime() . ' est annule par le docteur ' ;
-        $sms->send('+212762379479',$smsContent );
+        $sms->send('+212668535370',$smsContent );
 
 
 
